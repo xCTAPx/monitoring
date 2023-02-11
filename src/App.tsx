@@ -1,5 +1,7 @@
-function App() {
-  return <h1>Monitoring app</h1>
+import { Routes } from './routes'
+
+const App = () => {
+    return <Routes />
 }
 
 export default App
