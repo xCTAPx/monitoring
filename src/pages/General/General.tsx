@@ -33,7 +33,7 @@ export const General: React.FC<Props> = () => {
 
     return (
         <>
-            <Button text="Text" />
+            <Button text="Text" onClick={() => {}} />
             <h1 onClick={openDetails(1, { id: 2 })}>General</h1>
         </>
     )
