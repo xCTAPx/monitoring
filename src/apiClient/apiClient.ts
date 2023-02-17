@@ -22,6 +22,10 @@ class ApiClient {
     delete(path: string, params?: object) {
         return _ky.delete(path, { json: params })
     }
+
+    createSocketConnection(url: string) {
+        return new WebSocket(url)
+    }
 }
 
 export const apiClient = new ApiClient()

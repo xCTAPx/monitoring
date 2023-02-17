@@ -1,0 +1,1 @@
+export { EColors } from './palette'
