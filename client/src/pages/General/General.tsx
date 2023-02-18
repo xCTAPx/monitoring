@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { apiClient } from '../../apiClient'
 import { MainLayout } from '../../layouts'
 import { EStatuses, IParamInfo } from '../../types'
+import { Pannel } from '../../UI'
 import { Exhauster, Aglomachine } from './components'
 
 const mockData: IParamInfo[] = [
@@ -122,6 +123,7 @@ export const General: React.FC<Props> = () => {
             title="Прогнозная аналитика эксгаустеров"
             screenTitle="Главный экран"
         >
+            <Pannel />
             <Content>
                 <Aglomachine number={1}>
                     <Exhauster
