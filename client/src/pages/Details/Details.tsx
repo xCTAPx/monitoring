@@ -50,6 +50,10 @@ function pushCeils(firstRow: React.ReactNode[], secondRow: React.ReactNode[], na
 
     //@ts-ignore
     for (let valueKey in infoData['data']) {
+        console.log(valueKey)
+        if(valueKey  === 'equipment'){
+            continue;
+        }
         const propsCeils = {
             //@ts-ignore
             title: namesData[valueKey]['name'],
