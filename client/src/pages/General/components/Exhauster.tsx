@@ -64,10 +64,11 @@ const Parameters = styled.div`
     flex-direction: column;
     align-items: center;
     width: 95%;
-    margin: auto;
     height: 50vh;
     overflow-x: hidden;
     overflow-y: auto;
+`
+const Subtitle = styled.h6`
 `
 
 const buttonStyles = {
@@ -84,7 +85,7 @@ export const Exhauster: React.FC<Props> = ({
     params,
     onOpen,
 }) => {
-    const sortedParams = sortParamsByPriorities(params)
+    const { withWarnings, withoutWarnings } = sortParamsByPriorities(params)
 
     return (
         <Container>
@@ -99,7 +100,12 @@ export const Exhauster: React.FC<Props> = ({
             </Header>
             <Image src="../../../../assets/exhauster.png" />
             <Parameters>
-                {sortedParams.map((param) => (
+                <Subtitle>Предупреждение ({withWarnings.length})</Subtitle>
+                {withWarnings.map((param) => (
+                    <DataRow param={param} />
+                ))}
+                <Subtitle>Все подшипники ({withWarnings.length})</Subtitle>
+                {withoutWarnings.map((param) => (
                     <DataRow param={param} />
                 ))}
             </Parameters>

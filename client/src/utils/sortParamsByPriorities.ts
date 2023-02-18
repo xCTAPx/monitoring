@@ -14,10 +14,22 @@ export const sortParamsByPriorities = (params: IParamInfo[]) => {
 
     const sorted = paramsWithPriority.sort((a, b) => b.priority - a.priority)
 
-    return sorted.map((elem) => ({
-        name: elem.name,
-        oilLevel: elem.oilLevel,
-        temperature: elem.temperature,
-        vibration: elem.vibration,
-    }))
+    const withWarnings = sorted
+        .filter((param) => param.priority)
+        .map((elem) => ({
+            name: elem.name,
+            oilLevel: elem.oilLevel,
+            temperature: elem.temperature,
+            vibration: elem.vibration,
+        }))
+    const withoutWarnings = sorted
+        .filter((param) => param.priority === 0)
+        .map((elem) => ({
+            name: elem.name,
+            oilLevel: elem.oilLevel,
+            temperature: elem.temperature,
+            vibration: elem.vibration,
+        }))
+
+    return { withWarnings, withoutWarnings }
 }
