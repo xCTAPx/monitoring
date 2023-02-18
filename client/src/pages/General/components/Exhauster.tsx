@@ -105,7 +105,7 @@ export const Exhauster: React.FC<Props> = ({
             <Header>
                 <Info>
                     <StatusIndicator status={status} />
-                    <Title>Эксгаустер {name}</Title>
+                    <Title>{name}</Title>
                 </Info>
                 <Button variant="light" style={buttonStyles} onClick={onOpen}>
                     {'>'}
