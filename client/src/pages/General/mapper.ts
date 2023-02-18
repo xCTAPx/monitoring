@@ -48,7 +48,7 @@ function mapParams(data: Obj) {
     return res
 }
 
-export function mapData(data: Obj): any[] {
+export function mapData(data: Obj, namesData: Obj): any[] {
     const res = []
 
     for (let key in data) {
@@ -75,10 +75,9 @@ export function mapData(data: Obj): any[] {
 
             arr.push(obj)
         })
-
         res.push({
             ...data[key],
-            name: 'Эксгаустер',
+            name: namesData[key]['name'],
             datetime: dayjs(data[key].datetime).format('hh:mm DD.MM.YYYY'),
             data: arr,
             enabled: !!data[key].data.equipment.work,

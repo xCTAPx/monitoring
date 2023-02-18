@@ -16,7 +16,7 @@ const Title = styled.div`
     border: 2px solid #8D9595 ;
 `
 const Ceil = styled.div`
-    width: 150px;
+    width: 200px;
     height: min-content;
     padding: 10px;
     border-radius: 10px;
