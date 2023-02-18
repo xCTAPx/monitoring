@@ -25,6 +25,7 @@ const Ceil = styled.div`
     background-color: #E8EAEA;
     font-weight: bold;
     margin: 30px;
+    height: auto;
     border: 2px solid #8D9595;
 `
 const ParList = styled.ul`

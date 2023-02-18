@@ -25,6 +25,8 @@ const Ceil = styled.div`
     color: white;
     font-weight: bold;
     margin: 30px;
+    height: auto;
+
 `
 const ParList = styled.ul`
     list-style: none;

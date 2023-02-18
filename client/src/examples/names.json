@@ -1,0 +1,956 @@
+{
+    "exhauster1": {
+        "name": "Эксгаустер № 1 (У-171)",
+        "bearing1": {
+            "name": "Подшипник 1",
+            "temperature": {
+                "name": "Температура нагрева"
+            },
+            "vibration_axial": {
+                "name": "Вибрация осевая"
+            },
+            "vibration_horizontal": {
+                "name": "Вибрация горизонтальная"
+            },
+            "vibration_vertical": {
+                "name": "Вибрация вертикальная"
+            }
+        },
+        "bearing2": {
+            "name": "Подшипник 2",
+            "temperature": {
+                "name": "Температура нагрева"
+            },
+            "vibration_axial": {
+                "name": "Вибрация осевая"
+            },
+            "vibration_horizontal": {
+                "name": "Вибрация горизонтальная"
+            },
+            "vibration_vertical": {
+                "name": "Вибрация вертикальная"
+            }
+        },
+        "bearing3": {
+            "name": "Подшипник 3",
+            "temperature": {
+                "name": "Температура нагрева"
+            }
+        },
+        "bearing4": {
+            "name": "Подшипник 4",
+            "temperature": {
+                "name": "Температура нагрева"
+            }
+        },
+        "bearing5": {
+            "name": "Подшипник 5",
+            "temperature": {
+                "name": "Температура нагрева"
+            }
+        },
+        "bearing6": {
+            "name": "Подшипник 6",
+            "temperature": {
+                "name": "Температура нагрева"
+            }
+        },
+        "bearing7": {
+            "name": "Подшипник 7",
+            "temperature": {
+                "name": "Температура нагрева"
+            },
+            "vibration_axial": {
+                "name": "Вибрация осевая"
+            },
+            "vibration_horizontal": {
+                "name": "Вибрация горизонтальная"
+            },
+            "vibration_vertical": {
+                "name": "Вибрация вертикальная"
+            }
+        },
+        "bearing8": {
+            "name": "Подшипник 8",
+            "temperature": {
+                "name": "Температура нагрева"
+            },
+            "vibration_axial": {
+                "name": "Вибрация осевая"
+            },
+            "vibration_horizontal": {
+                "name": "Вибрация горизонтальная"
+            },
+            "vibration_vertical": {
+                "name": "Вибрация вертикальная"
+            }
+        },
+        "bearing9": {
+            "name": "Подшипник 9",
+            "temperature": {
+                "name": "Температура нагрева"
+            }
+        },
+        "cooler": {
+            "name": "Охладитель",
+            "temperature_oil_after": {
+                "name": "Температура масла после охладителя"
+            },
+            "temperature_oil_before": {
+                "name": "Температура масла до охладителя"
+            },
+            "temperature_water_after": {
+                "name": "Температура воды на выходе охладителя"
+            },
+            "temperature_water_before": {
+                "name": "Температура воды до охладителя"
+            }
+        },
+        "gas_manifold": {
+            "name": "Газовый коллектор",
+            "temperature_before": {
+                "name": "Температура перед эксгаустером"
+            },
+            "underpressure_before": {
+                "name": "Разрежение перед эксгаустером"
+            }
+        },
+        "valve_position": {
+            "name": "Положение задвижки",
+            "gas_valve_closed": {
+                "name": "ЗАКРЫТО задвижка газ"
+            },
+            "gas_valve_open": {
+                "name": "ОТКРЫТО задвижка газ"
+            },
+            "gas_valve_position": {
+                "name": "Положение задвижки газ"
+            }
+        },
+        "main_drive": {
+            "name": "Главный привод",
+            "rotor_current": {
+                "name": "Ток ротора"
+            },
+            "rotor_voltage": {
+                "name": "Напряжение ротора"
+            },
+            "stator_current": {
+                "name": "Ток статора"
+            },
+            "stator_voltage": {
+                "name": "Напряжение статора"
+            }
+        },
+        "oil_system": {
+            "name": "Маслосистема",
+            "oil_level": {
+                "name": "Уровень масла"
+            },
+            "oil_pressure": {
+                "name": "Давление масла"
+            }
+        },
+        "equipment": {
+            "name": "Оборудование",
+            "work": {
+                "name": "В работе"
+            }
+        }
+    },
+    "exhauster2": {
+        "name": "Эксгаустер № 2 (У-172)",
+        "bearing1": {
+            "name": "Подшипник 1",
+            "temperature": {
+                "name": "Температура нагрева"
+            },
+            "vibration_axial": {
+                "name": "Вибрация осевая"
+            },
+            "vibration_horizontal": {
+                "name": "Вибрация горизонтальная"
+            },
+            "vibration_vertical": {
+                "name": "Вибрация вертикальная"
+            }
+        },
+        "bearing2": {
+            "name": "Подшипник 2",
+            "temperature": {
+                "name": "Температура нагрева"
+            },
+            "vibration_axial": {
+                "name": "Вибрация осевая"
+            },
+            "vibration_horizontal": {
+                "name": "Вибрация горизонтальная"
+            },
+            "vibration_vertical": {
+                "name": "Вибрация вертикальная"
+            }
+        },
+        "bearing3": {
+            "name": "Подшипник 3",
+            "temperature": {
+                "name": "Температура нагрева"
+            }
+        },
+        "bearing4": {
+            "name": "Подшипник 4",
+            "temperature": {
+                "name": "Температура нагрева"
+            }
+        },
+        "bearing5": {
+            "name": "Подшипник 5",
+            "temperature": {
+                "name": "Температура нагрева"
+            }
+        },
+        "bearing6": {
+            "name": "Подшипник 6",
+            "temperature": {
+                "name": "Температура нагрева"
+            }
+        },
+        "bearing7": {
+            "name": "Подшипник 7",
+            "temperature": {
+                "name": "Температура нагрева"
+            },
+            "vibration_axial": {
+                "name": "Вибрация осевая"
+            },
+            "vibration_horizontal": {
+                "name": "Вибрация горизонтальная"
+            },
+            "vibration_vertical": {
+                "name": "Вибрация вертикальная"
+            }
+        },
+        "bearing8": {
+            "name": "Подшипник 8",
+            "temperature": {
+                "name": "Температура нагрева"
+            },
+            "vibration_axial": {
+                "name": "Вибрация осевая"
+            },
+            "vibration_horizontal": {
+                "name": "Вибрация горизонтальная"
+            },
+            "vibration_vertical": {
+                "name": "Вибрация вертикальная"
+            }
+        },
+        "bearing9": {
+            "name": "Подшипник 9",
+            "temperature": {
+                "name": "Температура нагрева"
+            }
+        },
+        "cooler": {
+            "name": "Охладитель",
+            "temperature_oil_after": {
+                "name": "Температура масла после охладителя"
+            },
+            "temperature_oil_before": {
+                "name": "Температура масла до охладителя"
+            },
+            "temperature_water_after": {
+                "name": "Температура воды на выходе охладителя"
+            },
+            "temperature_water_before": {
+                "name": "Температура воды до охладителя"
+            }
+        },
+        "gas_manifold": {
+            "name": "Газовый коллектор",
+            "temperature_before": {
+                "name": "Температура перед эксгаустером"
+            },
+            "underpressure_before": {
+                "name": "Разрежение перед эксгаустером"
+            }
+        },
+        "valve_position": {
+            "name": "Положение задвижки",
+            "gas_valve_closed": {
+                "name": "ЗАКРЫТО задвижка газ"
+            },
+            "gas_valve_open": {
+                "name": "ОТКРЫТО задвижка газ"
+            },
+            "gas_valve_position": {
+                "name": "Положение задвижки газ"
+            }
+        },
+        "main_drive": {
+            "name": "Главный привод",
+            "rotor_current": {
+                "name": "Ток ротора"
+            },
+            "rotor_voltage": {
+                "name": "Напряжение ротора"
+            },
+            "stator_current": {
+                "name": "Ток статора"
+            },
+            "stator_voltage": {
+                "name": "Напряжение статора"
+            }
+        },
+        "oil_system": {
+            "name": "Маслосистема",
+            "oil_level": {
+                "name": "Уровень масла"
+            },
+            "oil_pressure": {
+                "name": "Давление масла"
+            }
+        },
+        "equipment": {
+            "name": "Оборудование",
+            "work": {
+                "name": "В работе"
+            }
+        }
+    },
+    "exhauster3": {
+        "name": "Эксгаустер № 3 (Ф-171)",
+        "bearing1": {
+            "name": "Подшипник 1",
+            "temperature": {
+                "name": "Температура нагрева"
+            },
+            "vibration_axial": {
+                "name": "Вибрация осевая"
+            },
+            "vibration_horizontal": {
+                "name": "Вибрация горизонтальная"
+            },
+            "vibration_vertical": {
+                "name": "Вибрация вертикальная"
+            }
+        },
+        "bearing2": {
+            "name": "Подшипник 2",
+            "temperature": {
+                "name": "Температура нагрева"
+            },
+            "vibration_axial": {
+                "name": "Вибрация осевая"
+            },
+            "vibration_horizontal": {
+                "name": "Вибрация горизонтальная"
+            },
+            "vibration_vertical": {
+                "name": "Вибрация вертикальная"
+            }
+        },
+        "bearing3": {
+            "name": "Подшипник 3",
+            "temperature": {
+                "name": "Температура нагрева"
+            }
+        },
+        "bearing4": {
+            "name": "Подшипник 4",
+            "temperature": {
+                "name": "Температура нагрева"
+            }
+        },
+        "bearing5": {
+            "name": "Подшипник 5",
+            "temperature": {
+                "name": "Температура нагрева"
+            }
+        },
+        "bearing6": {
+            "name": "Подшипник 6",
+            "temperature": {
+                "name": "Температура нагрева"
+            }
+        },
+        "bearing7": {
+            "name": "Подшипник 7",
+            "temperature": {
+                "name": "Температура нагрева"
+            },
+            "vibration_axial": {
+                "name": "Вибрация осевая"
+            },
+            "vibration_horizontal": {
+                "name": "Вибрация горизонтальная"
+            },
+            "vibration_vertical": {
+                "name": "Вибрация вертикальная"
+            }
+        },
+        "bearing8": {
+            "name": "Подшипник 8",
+            "temperature": {
+                "name": "Температура нагрева"
+            },
+            "vibration_axial": {
+                "name": "Вибрация осевая"
+            },
+            "vibration_horizontal": {
+                "name": "Вибрация горизонтальная"
+            },
+            "vibration_vertical": {
+                "name": "Вибрация вертикальная"
+            }
+        },
+        "bearing9": {
+            "name": "Подшипник 9",
+            "temperature": {
+                "name": "Температура нагрева"
+            }
+        },
+        "cooler": {
+            "name": "Охладитель",
+            "temperature_oil_after": {
+                "name": "Температура масла после охладителя"
+            },
+            "temperature_oil_before": {
+                "name": "Температура масла до охладителя"
+            },
+            "temperature_water_after": {
+                "name": "Температура воды на выходе охладителя"
+            },
+            "temperature_water_before": {
+                "name": "Температура воды до охладителя"
+            }
+        },
+        "gas_manifold": {
+            "name": "Газовый коллектор",
+            "temperature_before": {
+                "name": "Температура перед эксгаустером"
+            },
+            "underpressure_before": {
+                "name": "Разрежение перед эксгаустером"
+            }
+        },
+        "valve_position": {
+            "name": "Положение задвижки",
+            "gas_valve_closed": {
+                "name": "ЗАКРЫТО задвижка газ"
+            },
+            "gas_valve_open": {
+                "name": "ОТКРЫТО задвижка газ"
+            },
+            "gas_valve_position": {
+                "name": "Положение задвижки газ"
+            }
+        },
+        "main_drive": {
+            "name": "Главный привод",
+            "rotor_current": {
+                "name": "Ток ротора"
+            },
+            "rotor_voltage": {
+                "name": "Напряжение ротора"
+            },
+            "stator_current": {
+                "name": "Ток статора"
+            },
+            "stator_voltage": {
+                "name": "Напряжение статора"
+            }
+        },
+        "oil_system": {
+            "name": "Маслосистема",
+            "oil_level": {
+                "name": "Уровень масла"
+            },
+            "oil_pressure": {
+                "name": "Давление масла"
+            }
+        },
+        "equipment": {
+            "name": "Оборудование",
+            "work": {
+                "name": "В работе"
+            }
+        }
+    },
+    "exhauster4": {
+        "name": "Эксгаустер № 4 (Ф-172)",
+        "bearing1": {
+            "name": "Подшипник 1",
+            "temperature": {
+                "name": "Температура нагрева"
+            },
+            "vibration_axial": {
+                "name": "Вибрация осевая"
+            },
+            "vibration_horizontal": {
+                "name": "Вибрация горизонтальная"
+            },
+            "vibration_vertical": {
+                "name": "Вибрация вертикальная"
+            }
+        },
+        "bearing2": {
+            "name": "Подшипник 2",
+            "temperature": {
+                "name": "Температура нагрева"
+            },
+            "vibration_axial": {
+                "name": "Вибрация осевая"
+            },
+            "vibration_horizontal": {
+                "name": "Вибрация горизонтальная"
+            },
+            "vibration_vertical": {
+                "name": "Вибрация вертикальная"
+            }
+        },
+        "bearing3": {
+            "name": "Подшипник 3",
+            "temperature": {
+                "name": "Температура нагрева"
+            }
+        },
+        "bearing4": {
+            "name": "Подшипник 4",
+            "temperature": {
+                "name": "Температура нагрева"
+            }
+        },
+        "bearing5": {
+            "name": "Подшипник 5",
+            "temperature": {
+                "name": "Температура нагрева"
+            }
+        },
+        "bearing6": {
+            "name": "Подшипник 6",
+            "temperature": {
+                "name": "Температура нагрева"
+            }
+        },
+        "bearing7": {
+            "name": "Подшипник 7",
+            "temperature": {
+                "name": "Температура нагрева"
+            },
+            "vibration_axial": {
+                "name": "Вибрация осевая"
+            },
+            "vibration_horizontal": {
+                "name": "Вибрация горизонтальная"
+            },
+            "vibration_vertical": {
+                "name": "Вибрация вертикальная"
+            }
+        },
+        "bearing8": {
+            "name": "Подшипник 8",
+            "temperature": {
+                "name": "Температура нагрева"
+            },
+            "vibration_axial": {
+                "name": "Вибрация осевая"
+            },
+            "vibration_horizontal": {
+                "name": "Вибрация горизонтальная"
+            },
+            "vibration_vertical": {
+                "name": "Вибрация вертикальная"
+            }
+        },
+        "bearing9": {
+            "name": "Подшипник 9",
+            "temperature": {
+                "name": "Температура нагрева"
+            }
+        },
+        "cooler": {
+            "name": "Охладитель",
+            "temperature_oil_after": {
+                "name": "Температура масла после охладителя"
+            },
+            "temperature_oil_before": {
+                "name": "Температура масла до охладителя"
+            },
+            "temperature_water_after": {
+                "name": "Температура воды на выходе охладителя"
+            },
+            "temperature_water_before": {
+                "name": "Температура воды до охладителя"
+            }
+        },
+        "gas_manifold": {
+            "name": "Газовый коллектор",
+            "temperature_before": {
+                "name": "Температура перед эксгаустером"
+            },
+            "underpressure_before": {
+                "name": "Разрежение перед эксгаустером"
+            }
+        },
+        "valve_position": {
+            "name": "Положение задвижки",
+            "gas_valve_closed": {
+                "name": "ЗАКРЫТО задвижка газ"
+            },
+            "gas_valve_open": {
+                "name": "ОТКРЫТО задвижка газ"
+            },
+            "gas_valve_position": {
+                "name": "Положение задвижки газ"
+            }
+        },
+        "main_drive": {
+            "name": "Главный привод",
+            "rotor_current": {
+                "name": "Ток ротора"
+            },
+            "rotor_voltage": {
+                "name": "Напряжение ротора"
+            },
+            "stator_current": {
+                "name": "Ток статора"
+            },
+            "stator_voltage": {
+                "name": "Напряжение статора"
+            }
+        },
+        "oil_system": {
+            "name": "Маслосистема",
+            "oil_level": {
+                "name": "Уровень масла"
+            },
+            "oil_pressure": {
+                "name": "Давление масла"
+            }
+        },
+        "equipment": {
+            "name": "Оборудование",
+            "work": {
+                "name": "В работе"
+            }
+        }
+    },
+    "exhauster5": {
+        "name": "Эксгаустер № 5 (X-171)",
+        "bearing1": {
+            "name": "Подшипник 1",
+            "temperature": {
+                "name": "Температура нагрева"
+            },
+            "vibration_axial": {
+                "name": "Вибрация осевая"
+            },
+            "vibration_horizontal": {
+                "name": "Вибрация горизонтальная"
+            },
+            "vibration_vertical": {
+                "name": "Вибрация вертикальная"
+            }
+        },
+        "bearing2": {
+            "name": "Подшипник 2",
+            "temperature": {
+                "name": "Температура нагрева"
+            },
+            "vibration_axial": {
+                "name": "Вибрация осевая"
+            },
+            "vibration_horizontal": {
+                "name": "Вибрация горизонтальная"
+            },
+            "vibration_vertical": {
+                "name": "Вибрация вертикальная"
+            }
+        },
+        "bearing3": {
+            "name": "Подшипник 3",
+            "temperature": {
+                "name": "Температура нагрева"
+            }
+        },
+        "bearing4": {
+            "name": "Подшипник 4",
+            "temperature": {
+                "name": "Температура нагрева"
+            }
+        },
+        "bearing5": {
+            "name": "Подшипник 5",
+            "temperature": {
+                "name": "Температура нагрева"
+            }
+        },
+        "bearing6": {
+            "name": "Подшипник 6",
+            "temperature": {
+                "name": "Температура нагрева"
+            }
+        },
+        "bearing7": {
+            "name": "Подшипник 7",
+            "temperature": {
+                "name": "Температура нагрева"
+            },
+            "vibration_axial": {
+                "name": "Вибрация осевая"
+            },
+            "vibration_horizontal": {
+                "name": "Вибрация горизонтальная"
+            },
+            "vibration_vertical": {
+                "name": "Вибрация вертикальная"
+            }
+        },
+        "bearing8": {
+            "name": "Подшипник 8",
+            "temperature": {
+                "name": "Температура нагрева"
+            },
+            "vibration_axial": {
+                "name": "Вибрация осевая"
+            },
+            "vibration_horizontal": {
+                "name": "Вибрация горизонтальная"
+            },
+            "vibration_vertical": {
+                "name": "Вибрация вертикальная"
+            }
+        },
+        "bearing9": {
+            "name": "Подшипник 9",
+            "temperature": {
+                "name": "Температура нагрева"
+            }
+        },
+        "cooler": {
+            "name": "Охладитель",
+            "temperature_oil_after": {
+                "name": "Температура масла после охладителя"
+            },
+            "temperature_oil_before": {
+                "name": "Температура масла до охладителя"
+            },
+            "temperature_water_after": {
+                "name": "Температура воды на выходе охладителя"
+            },
+            "temperature_water_before": {
+                "name": "Температура воды до охладителя"
+            }
+        },
+        "gas_manifold": {
+            "name": "Газовый коллектор",
+            "temperature_before": {
+                "name": "Температура перед эксгаустером"
+            },
+            "underpressure_before": {
+                "name": "Разрежение перед эксгаустером"
+            }
+        },
+        "valve_position": {
+            "name": "Положение задвижки",
+            "gas_valve_closed": {
+                "name": "ЗАКРЫТО задвижка газ"
+            },
+            "gas_valve_open": {
+                "name": "ОТКРЫТО задвижка газ"
+            },
+            "gas_valve_position": {
+                "name": "Положение задвижки газ"
+            }
+        },
+        "main_drive": {
+            "name": "Главный привод",
+            "rotor_current": {
+                "name": "Ток ротора"
+            },
+            "rotor_voltage": {
+                "name": "Напряжение ротора"
+            },
+            "stator_current": {
+                "name": "Ток статора"
+            },
+            "stator_voltage": {
+                "name": "Напряжение статора"
+            }
+        },
+        "oil_system": {
+            "name": "Маслосистема",
+            "oil_level": {
+                "name": "Уровень масла"
+            },
+            "oil_pressure": {
+                "name": "Давление масла"
+            }
+        },
+        "equipment": {
+            "name": "Оборудование",
+            "work": {
+                "name": "В работе"
+            }
+        }
+    },
+    "exhauster6": {
+        "name": "Эксгаустер № 6 (X-172)",
+        "bearing1": {
+            "name": "Подшипник 1",
+            "temperature": {
+                "name": "Температура нагрева"
+            },
+            "vibration_axial": {
+                "name": "Вибрация осевая"
+            },
+            "vibration_horizontal": {
+                "name": "Вибрация горизонтальная"
+            },
+            "vibration_vertical": {
+                "name": "Вибрация вертикальная"
+            }
+        },
+        "bearing2": {
+            "name": "Подшипник 2",
+            "temperature": {
+                "name": "Температура нагрева"
+            },
+            "vibration_axial": {
+                "name": "Вибрация осевая"
+            },
+            "vibration_horizontal": {
+                "name": "Вибрация горизонтальная"
+            },
+            "vibration_vertical": {
+                "name": "Вибрация вертикальная"
+            }
+        },
+        "bearing3": {
+            "name": "Подшипник 3",
+            "temperature": {
+                "name": "Температура нагрева"
+            }
+        },
+        "bearing4": {
+            "name": "Подшипник 4",
+            "temperature": {
+                "name": "Температура нагрева"
+            }
+        },
+        "bearing5": {
+            "name": "Подшипник 5",
+            "temperature": {
+                "name": "Температура нагрева"
+            }
+        },
+        "bearing6": {
+            "name": "Подшипник 6",
+            "temperature": {
+                "name": "Температура нагрева"
+            }
+        },
+        "bearing7": {
+            "name": "Подшипник 7",
+            "temperature": {
+                "name": "Температура нагрева"
+            },
+            "vibration_axial": {
+                "name": "Вибрация осевая"
+            },
+            "vibration_horizontal": {
+                "name": "Вибрация горизонтальная"
+            },
+            "vibration_vertical": {
+                "name": "Вибрация вертикальная"
+            }
+        },
+        "bearing8": {
+            "name": "Подшипник 8",
+            "temperature": {
+                "name": "Температура нагрева"
+            },
+            "vibration_axial": {
+                "name": "Вибрация осевая"
+            },
+            "vibration_horizontal": {
+                "name": "Вибрация горизонтальная"
+            },
+            "vibration_vertical": {
+                "name": "Вибрация вертикальная"
+            }
+        },
+        "bearing9": {
+            "name": "Подшипник 9",
+            "temperature": {
+                "name": "Температура нагрева"
+            }
+        },
+        "cooler": {
+            "name": "Охладитель",
+            "temperature_oil_after": {
+                "name": "Температура масла после охладителя"
+            },
+            "temperature_oil_before": {
+                "name": "Температура масла до охладителя"
+            },
+            "temperature_water_after": {
+                "name": "Температура воды на выходе охладителя"
+            },
+            "temperature_water_before": {
+                "name": "Температура воды до охладителя"
+            }
+        },
+        "gas_manifold": {
+            "name": "Газовый коллектор",
+            "temperature_before": {
+                "name": "Температура перед эксгаустером"
+            },
+            "underpressure_before": {
+                "name": "Разрежение перед эксгаустером"
+            }
+        },
+        "valve_position": {
+            "name": "Положение задвижки",
+            "gas_valve_closed": {
+                "name": "ЗАКРЫТО задвижка газ"
+            },
+            "gas_valve_open": {
+                "name": "ОТКРЫТО задвижка газ"
+            },
+            "gas_valve_position": {
+                "name": "Положение задвижки газ"
+            }
+        },
+        "main_drive": {
+            "name": "Главный привод",
+            "rotor_current": {
+                "name": "Ток ротора"
+            },
+            "rotor_voltage": {
+                "name": "Напряжение ротора"
+            },
+            "stator_current": {
+                "name": "Ток статора"
+            },
+            "stator_voltage": {
+                "name": "Напряжение статора"
+            }
+        },
+        "oil_system": {
+            "name": "Маслосистема",
+            "oil_level": {
+                "name": "Уровень масла"
+            },
+            "oil_pressure": {
+                "name": "Давление масла"
+            }
+        },
+        "equipment": {
+            "name": "Оборудование",
+            "work": {
+                "name": "В работе"
+            }
+        }
+    }
+}
