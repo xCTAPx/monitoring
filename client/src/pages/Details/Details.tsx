@@ -1,7 +1,8 @@
 import React from 'react'
-import { useLocation, useParams } from 'react-router-dom'
+import { useLocation, useNavigate, useParams } from 'react-router-dom'
 import styled from 'styled-components'
 import { MainLayout } from '../../layouts'
+import { EScreens, Switch } from '../../UI'
 import { CeilInfo } from '../../UI/CeilInfo'
 import { CeilInfoWhite } from '../../UI/CeilInfoWhite'
 import { RangePanel } from '../../UI/RangePanel'
@@ -144,13 +145,19 @@ const infoData = [
 ]
 
 export const Details: React.FC<Props> = () => {
-    // Below are examples for extracting params from path and state
-    const params = useParams()
-    const location = useLocation()
-    console.log(location)
-    console.log(params)
+    const navigate = useNavigate()
 
-    return <MainLayout screenTitle='Эксгаустер' title='Эксгаустер номер один'>
+    const params = useParams()
+    const { id } = params
+
+    const openTrends = (id: string) => navigate(`/trends/${id}`)
+
+    return <MainLayout title="Прогнозная аналитика эксгаустеров" screenTitle={`Эксгаустер №${id}`} slot={
+        <Switch
+            activeScreen={EScreens.SCHEMA}
+            onSecondClick={() => openTrends(id?.toString() ?? '')}
+        />
+    }>
         <Grid>
             <RangePanel title="Маслобак" max={100} value={70} units={'°C'} />
             <RangePanel title="Заслонка" max={100} value={30} units={'%'} />

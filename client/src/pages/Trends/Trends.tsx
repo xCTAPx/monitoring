@@ -1,5 +1,5 @@
 import React, { useCallback, useMemo, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import {
     Brush,
     CartesianGrid,
@@ -19,7 +19,6 @@ import { Row } from './components'
 import { checkIsShown, getParamsList } from './utils'
 
 type Props = {
-    exhausterNumber: string
 }
 
 export type IParam = {
@@ -100,10 +99,13 @@ const data = [
     },
 ]
 
-export const Trends: React.FC<Props> = ({ exhausterNumber }) => {
+export const Trends: React.FC<Props> = () => {
     const navigate = useNavigate()
 
-    const openDetails = (id: number) => navigate(`/details/${id}`)
+    const openDetails = (id: string) => navigate(`/details/${id}`)
+
+    const routeParams = useParams()
+    const { id } = routeParams
 
     const params = useMemo(() => getParamsList(data), [data])
     const initialParamsList: IParam[] = useMemo(
@@ -134,11 +136,11 @@ export const Trends: React.FC<Props> = ({ exhausterNumber }) => {
     return (
         <MainLayout
             title="Прогнозная аналитика эксгаустеров"
-            screenTitle={`Эксгаустер №${exhausterNumber}`}
+            screenTitle={`Эксгаустер №${id}`}
             slot={
                 <Switch
                     activeScreen={EScreens.TRENDS}
-                    onFirstClick={() => openDetails(1)}
+                    onFirstClick={() => openDetails(id?.toString() ?? '')}
                 />
             }
         >

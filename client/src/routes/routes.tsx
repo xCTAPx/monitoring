@@ -7,7 +7,7 @@ export const Routes = () => {
             <Route path="/" element={<Navigate to="/general" />} />
             <Route path="/general" element={<General />} />
             <Route path="/details/:id" element={<Details />} />
-            <Route path="/trends" element={<Trends />} />
+            <Route path="/trends/:id" element={<Trends />} />
         </DOMRoutes>
     )
 }
