@@ -11,9 +11,15 @@ const dict = {
     'gas_valve_open': '%',
     'temperature_oil_before': 'Масло на входе, °C',
     'temperature_oil_after': 'Масло на выходе, °C',
-    'temperature_water_before': 'Масло на входе, °C',
+    'temperature_water_before': 'Температура перед эксгаустером, °C',
     'temperature_water_after': 'Масло на выходе, °C',
-    'oil_pressure': 'Давление масла, %'
+    'oil_pressure': 'Давление масла, %',
+    'stator_current': "Ток, A",
+    'work': 'В работe',
+    'stator_voltage': 'Напряжение статора',
+    'rotor_voltage': 'Напряжение ротора',
+    "rotor_current": 'Ток ротора',
+    'gas_valve_position': 'Положение задвижки газ'
 }
 
 export const disctionaryUnits = (string: string): string => {
