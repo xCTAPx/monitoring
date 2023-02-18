@@ -17,13 +17,13 @@ const Title = styled.div`
 const Ceil = styled.div`
     width: 400px;
     padding: 10px;
+    
     border-radius: 10px;
     background-color: #414F4F;
     color: white;
     font-weight: bold;
     margin: 30px;
     margin-bottom: 0;
-
 `
 const Pb = styled.div`
     height: 50px;
