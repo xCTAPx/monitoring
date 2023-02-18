@@ -5,6 +5,7 @@ import { StatusIndicator } from '../../../UI'
 import { EStatuses, IParamInfo } from '../../../types'
 import { EColors } from '../../../utils'
 import { DataRow } from './DataRow'
+import { sortParamsByPriorities } from '../../../utils/sortParamsByPriorities'
 
 type Props = {
     name: string
@@ -82,6 +83,8 @@ export const Exhauster: React.FC<Props> = ({
     params,
     onOpen,
 }) => {
+    const sortedParams = sortParamsByPriorities(params)
+
     return (
         <Container>
             <Header>
@@ -95,7 +98,7 @@ export const Exhauster: React.FC<Props> = ({
             </Header>
             <Image src="../../../../assets/exhauster.png" />
             <Parameters>
-                {params.map((param) => (
+                {sortedParams.map((param) => (
                     <DataRow param={param} />
                 ))}
             </Parameters>

@@ -32,6 +32,51 @@ const mockData: IParamInfo[] = [
         temperature: EStatuses.AVAILABLE,
         vibration: EStatuses.WARNING,
     },
+    {
+        name: 'Param 9',
+        temperature: EStatuses.AVAILABLE,
+        oilLevel: EStatuses.WARNING,
+    },
+    {
+        name: 'Param 10',
+        oilLevel: EStatuses.ERROR,
+        temperature: EStatuses.WARNING,
+    },
+    {
+        name: 'Param 11',
+        temperature: EStatuses.WARNING,
+    },
+    {
+        name: 'Param 12',
+        oilLevel: EStatuses.AVAILABLE,
+        temperature: EStatuses.WARNING,
+    },
+    {
+        name: 'Param 13',
+        vibration: EStatuses.AVAILABLE,
+    },
+    {
+        name: 'Param 14',
+        oilLevel: EStatuses.ERROR,
+        vibration: EStatuses.AVAILABLE,
+    },
+    {
+        name: 'Param 15',
+        temperature: EStatuses.AVAILABLE,
+        vibration: EStatuses.ERROR,
+    },
+    {
+        name: 'Param 16',
+        temperature: EStatuses.AVAILABLE,
+    },
+    {
+        name: 'Param 17',
+        oilLevel: EStatuses.AVAILABLE,
+    },
+    {
+        name: 'Param 18',
+        oilLevel: EStatuses.WARNING,
+    },
 ]
 
 type Props = {}

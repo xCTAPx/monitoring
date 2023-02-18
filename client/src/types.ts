@@ -6,7 +6,7 @@ export enum EStatuses {
 
 export enum EParams {
     TEMPERATURE = 'Temperature',
-    OIL_LEVEL = 'OilLeve',
+    OIL_LEVEL = 'OilLevel',
     VIBRATION = 'Vibrations',
 }
 
