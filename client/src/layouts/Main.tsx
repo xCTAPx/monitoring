@@ -6,6 +6,7 @@ type Props = {
     title: string
     screenTitle: string
     children: React.ReactElement | JSX.Element[]
+    slot?: React.ReactElement
 }
 
 const Container = styled.div`
@@ -19,6 +20,7 @@ const TopPannel = styled.div`
     background-color: ${EColors.white};
     display: flex;
     align-items: center;
+    justify-content: space-between;
 `
 const Title = styled.h4`
     padding-left: 24px;
@@ -42,16 +44,21 @@ const ScreenTitle = styled.h6`
 const Content = styled.div`
     padding: 12px;
 `
+const Slot = styled.div`
+    padding-right: 16px;
+`
 
 export const MainLayout: React.FC<Props> = ({
     title,
     screenTitle,
     children,
+    slot,
 }) => {
     return (
         <Container>
             <TopPannel>
                 <Title>{title}</Title>
+                <Slot>{slot}</Slot>
             </TopPannel>
             <ContentContainer>
                 <ContentPannel>

@@ -1,4 +1,5 @@
 import React, { useCallback, useMemo, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import {
     Brush,
     CartesianGrid,
@@ -12,6 +13,7 @@ import {
 } from 'recharts'
 import styled from 'styled-components'
 import { MainLayout } from '../../layouts'
+import { Switch, EScreens } from '../../UI'
 import { EColors } from '../../utils'
 import { Row } from './components'
 import { checkIsShown, getParamsList } from './utils'
@@ -99,6 +101,10 @@ const data = [
 ]
 
 export const Trends: React.FC<Props> = ({ exhausterNumber }) => {
+    const navigate = useNavigate()
+
+    const openDetails = (id: number) => navigate(`/details/${id}`)
+
     const params = useMemo(() => getParamsList(data), [data])
     const initialParamsList: IParam[] = useMemo(
         () => params.map((param) => ({ name: param, isShown: true })),
@@ -129,6 +135,12 @@ export const Trends: React.FC<Props> = ({ exhausterNumber }) => {
         <MainLayout
             title="Прогнозная аналитика эксгаустеров"
             screenTitle={`Эксгаустер №${exhausterNumber}`}
+            slot={
+                <Switch
+                    activeScreen={EScreens.TRENDS}
+                    onFirstClick={() => openDetails(1)}
+                />
+            }
         >
             <Content>
                 <Menu>
