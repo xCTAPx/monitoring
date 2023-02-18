@@ -6,6 +6,8 @@ import { EStatuses, IParamInfo } from '../../../types'
 import { EColors } from '../../../utils'
 import { DataRow } from './DataRow'
 import { sortParamsByPriorities } from '../../../utils/sortParamsByPriorities'
+import mock from '../mock.json'
+import { mapData } from '../mapper'
 
 type Props = {
     name: string
@@ -86,6 +88,8 @@ export const Exhauster: React.FC<Props> = ({
     onOpen,
 }) => {
     const { withWarnings, withoutWarnings } = sortParamsByPriorities(params)
+    const mockObj = JSON.parse(JSON.stringify(mock))
+    mapData(mockObj)
 
     return (
         <Container>
@@ -101,12 +105,12 @@ export const Exhauster: React.FC<Props> = ({
             <Image src="../../../../assets/exhauster.png" />
             <Parameters>
                 <Subtitle>Предупреждение ({withWarnings.length})</Subtitle>
-                {withWarnings.map((param) => (
-                    <DataRow param={param} />
+                {withWarnings.map((param, index) => (
+                    <DataRow key={index} param={param} />
                 ))}
                 <Subtitle>Все подшипники ({withWarnings.length})</Subtitle>
-                {withoutWarnings.map((param) => (
-                    <DataRow param={param} />
+                {withoutWarnings.map((param, index) => (
+                    <DataRow key={index} param={param} />
                 ))}
             </Parameters>
         </Container>
