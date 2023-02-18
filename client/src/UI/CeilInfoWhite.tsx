@@ -60,10 +60,8 @@ const CeilGray = styled.span`
 
 export const CeilInfoWhite: React.FC<Props> = ({ data }) => {
     return (
-<<<<<<< HEAD
 
-=======
->>>>>>> ae21cdb (add whire ceil)
+
         <Ceil>
             <Title>{data.title}</Title>
             <ParList>

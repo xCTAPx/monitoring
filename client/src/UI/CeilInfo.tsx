@@ -56,7 +56,7 @@ export const CeilInfo: React.FC<Props> = ({ data }) => {
             <ParList>
                 {data.data.map(e => {
                     return (
-                        <CeilLi><span>{e.label}</span><span>{e.value}</span></CeilLi>
+                        <CeilLi statusColor='default'><span>{e.label}</span><span>{e.value}</span></CeilLi>
                     )
                 })}
             </ParList>

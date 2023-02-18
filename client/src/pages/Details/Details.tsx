@@ -3,6 +3,8 @@ import { useLocation, useParams } from 'react-router-dom'
 import styled from 'styled-components'
 import { MainLayout } from '../../layouts'
 import { CeilInfo } from '../../UI/CeilInfo'
+import { CeilInfoWhite } from '../../UI/CeilInfoWhite'
+import { RangePanel } from '../../UI/RangePanel'
 
 type Props = {}
 
@@ -150,7 +152,13 @@ export const Details: React.FC<Props> = () => {
 
     return <MainLayout screenTitle='Эксгаустер' title='Эксгаустер номер один'>
         <Grid>
+            <RangePanel title="Маслобак" max={100} value={70} units={'°C'} />
+            <RangePanel title="Заслонка" max={100} value={30} units={'%'} />
+        </Grid>
+
+        <Grid>
             {infoData.map(e => <CeilInfo data={e} />)}
+            <CeilInfoWhite data={infoData[0]} />
         </Grid>
     </MainLayout>
 }
