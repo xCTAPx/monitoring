@@ -99,6 +99,7 @@ export const Exhauster: React.FC<Props> = ({
     onOpen,
 }) => {
     const { withWarnings, withoutWarnings } = sortParamsByPriorities(params)
+    const withParams = withoutWarnings.filter(el => !!(el.oilLevel || el.temperature || el.vibration))
 
     return (
         <Container>
@@ -118,8 +119,8 @@ export const Exhauster: React.FC<Props> = ({
                 {withWarnings.map((param, index) => (
                     <DataRow key={index} param={param} />
                 ))}
-                <Subtitle>Все подшипники ({withoutWarnings.length})</Subtitle>
-                {withoutWarnings.map((param, index) => (
+                <Subtitle>Все подшипники ({withParams.length})</Subtitle>
+                {withParams.map((param, index) => (
                     <DataRow key={index} param={param} />
                 ))}
             </Parameters>

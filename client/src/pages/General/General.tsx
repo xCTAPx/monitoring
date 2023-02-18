@@ -3,11 +3,12 @@ import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 import { apiClient } from '../../apiClient'
 import { MainLayout } from '../../layouts'
-import { EStatuses, IParamInfo } from '../../types'
+import { EStatuses } from '../../types'
 import { Pannel } from '../../UI'
 import { Exhauster, Aglomachine } from './components'
 import mock from './mock.json'
 import { mapData } from './mapper'
+import example from '../../examples/values.json'
 
 type Props = {}
 type OpenDetailsParams = {
@@ -21,7 +22,7 @@ const Content = styled.section`
 
 export const General: React.FC<Props> = () => {
     const mockObj = JSON.parse(JSON.stringify(mock))
-    const params = mapData(mockObj)
+    const params = mapData(example)
     const navigate = useNavigate()
 
     const openDetails = (id: string, params?: OpenDetailsParams) =>
