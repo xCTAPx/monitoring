@@ -6,13 +6,12 @@ import { EStatuses, IParamInfo } from '../../../types'
 import { EColors } from '../../../utils'
 import { DataRow } from './DataRow'
 import { sortParamsByPriorities } from '../../../utils/sortParamsByPriorities'
-import mock from '../mock.json'
-import { mapData } from '../mapper'
 
 type Props = {
     name: string
     status: EStatuses
     params: IParamInfo[]
+    date: string
     onOpen: () => void
 }
 
@@ -72,6 +71,17 @@ const Parameters = styled.div`
 `
 const Subtitle = styled.h6`
 `
+const Timestamp = styled.div`
+    border-radius: 6px;
+    border: 1px dashed ${EColors.black};
+    background-color: ${EColors.background_secondary};
+    height: 24px;
+    width: 120px;
+    margin: auto;
+    margin-bottom: 12px;
+    text-align: center;
+    font-size: 12px;
+`
 
 const buttonStyles = {
     height: 20,
@@ -85,11 +95,10 @@ export const Exhauster: React.FC<Props> = ({
     name,
     status,
     params,
+    date,
     onOpen,
 }) => {
     const { withWarnings, withoutWarnings } = sortParamsByPriorities(params)
-    const mockObj = JSON.parse(JSON.stringify(mock))
-    mapData(mockObj)
 
     return (
         <Container>
@@ -102,13 +111,14 @@ export const Exhauster: React.FC<Props> = ({
                     {'>'}
                 </Button>
             </Header>
+            <Timestamp>{date}</Timestamp>
             <Image src="../../../../assets/exhauster.png" />
             <Parameters>
                 <Subtitle>Предупреждение ({withWarnings.length})</Subtitle>
                 {withWarnings.map((param, index) => (
                     <DataRow key={index} param={param} />
                 ))}
-                <Subtitle>Все подшипники ({withWarnings.length})</Subtitle>
+                <Subtitle>Все подшипники ({withoutWarnings.length})</Subtitle>
                 {withoutWarnings.map((param, index) => (
                     <DataRow key={index} param={param} />
                 ))}

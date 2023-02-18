@@ -15,8 +15,8 @@
                 "vibration_horizontal": 0.3298611640930176,
                 "vibration_vertical": 0.5844907760620117
             },
-            "bearing3": { "temperature": 48.099998474121094 },
-            "bearing4": { "temperature": 51.19999694824219 },
+            "bearing3": { "temperature": 74 },
+            "bearing4": { "temperature": 666 },
             "bearing5": { "temperature": 41.0 },
             "bearing6": { "temperature": 42.19999694824219 },
             "bearing7": {
@@ -48,7 +48,7 @@
                 "oil_level": 79.04580688476562,
                 "oil_pressure": 2.1243324279785156
             },
-            "equipment": { "work": 1.0 }
+            "equipment": { "work": 0.0 }
         }
     },
     "exhauster2": {

@@ -124,7 +124,6 @@ export const Trends: React.FC<Props> = () => {
     )
 
     const onChangeValue = useCallback((name: string, value: boolean) => {
-        console.log(name, value)
         setParamsList((prevParams) =>
             prevParams.map((param) =>
                 param.name === name
