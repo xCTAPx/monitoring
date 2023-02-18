@@ -52,6 +52,7 @@ const Menu = styled.div`
     width: 20%;
     height: 80vh;
     border: 1px dashed ${EColors.background_primary};
+    padding: 0 6px;
 `
 
 const data = [

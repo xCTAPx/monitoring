@@ -42,6 +42,7 @@ const Info = styled.div`
 const Title = styled.h6`
     padding-left: 8px;
     padding-top: 6px;
+    color: ${EColors.white};
 `
 const Parameters = styled.div`
     ::-webkit-scrollbar {
