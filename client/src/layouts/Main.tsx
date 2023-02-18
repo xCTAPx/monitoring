@@ -1,4 +1,6 @@
 import React from 'react'
+import { Button } from 'react-bootstrap'
+import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 import { EColors } from '../utils'
 
@@ -47,6 +49,9 @@ const Content = styled.div`
 const Slot = styled.div`
     padding-right: 16px;
 `
+const NavBar = styled.div`
+    display: flex;
+`
 
 export const MainLayout: React.FC<Props> = ({
     title,
@@ -54,11 +59,18 @@ export const MainLayout: React.FC<Props> = ({
     children,
     slot,
 }) => {
+    const navigate = useNavigate()
+
+    const openMain = () => navigate(`/`)
+
     return (
         <Container>
             <TopPannel>
                 <Title>{title}</Title>
-                <Slot>{slot}</Slot>
+                <NavBar>
+                    {slot && <Button variant='info' style={{ marginRight: 24 }} onClick={openMain}>К списку эксгаустеров</Button>}
+                    <Slot>{slot}</Slot>
+                </NavBar>
             </TopPannel>
             <ContentContainer>
                 <ContentPannel>

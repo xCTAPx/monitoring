@@ -91,14 +91,11 @@ const Content = styled.section`
 `
 
 export const General: React.FC<Props> = () => {
-    // apiClient.get('path', { id: 1 })
     const navigate = useNavigate()
 
-    // below is example for navigation with params and dynamic path
-    const openDetails = (id: number, params: OpenDetailsParams) => () =>
+    const openDetails = (id: string, params?: OpenDetailsParams) =>
         navigate(`/details/${id}`, { state: params })
 
-    // below is request example
     useEffect(() => {
         const fetchSomething = async () => {
             const response = await apiClient
@@ -113,11 +110,6 @@ export const General: React.FC<Props> = () => {
         fetchSomething()
     }, [])
 
-    // <Button text="Text" onClick={() => {}} />
-    // <h1 onClick={openDetails(1, { id: 2 })}>General</h1>
-
-    const openExhauster = () => {}
-
     return (
         <MainLayout
             title="Прогнозная аналитика эксгаустеров"
@@ -130,13 +122,13 @@ export const General: React.FC<Props> = () => {
                         name="Y-111"
                         status={EStatuses.AVAILABLE}
                         params={mockData}
-                        onOpen={openExhauster}
+                        onOpen={() => openDetails("Y-111")}
                     />
                     <Exhauster
                         name="Y-112"
                         status={EStatuses.WARNING}
                         params={mockData}
-                        onOpen={openExhauster}
+                        onOpen={() => openDetails("Y-112")}
                     />
                 </Aglomachine>
                 <Aglomachine number={2}>
@@ -144,13 +136,13 @@ export const General: React.FC<Props> = () => {
                         name="Y-121"
                         status={EStatuses.ERROR}
                         params={mockData}
-                        onOpen={openExhauster}
+                        onOpen={() => openDetails("Y-121")}
                     />
                     <Exhauster
                         name="Y-122"
                         status={EStatuses.ERROR}
                         params={mockData}
-                        onOpen={openExhauster}
+                        onOpen={() => openDetails("Y-122")}
                     />
                 </Aglomachine>
                 <Aglomachine number={3}>
@@ -158,13 +150,13 @@ export const General: React.FC<Props> = () => {
                         name="Y-211"
                         status={EStatuses.WARNING}
                         params={mockData}
-                        onOpen={openExhauster}
+                        onOpen={() => openDetails("Y-211")}
                     />
                     <Exhauster
                         name="Y-221"
                         status={EStatuses.ERROR}
                         params={mockData}
-                        onOpen={openExhauster}
+                        onOpen={() => openDetails("Y-221")}
                     />
                 </Aglomachine>
             </Content>
