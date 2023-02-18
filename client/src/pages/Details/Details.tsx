@@ -6,6 +6,7 @@ import { EScreens, Switch } from '../../UI'
 import { CeilInfo } from '../../UI/CeilInfo'
 import { CeilInfoWhite } from '../../UI/CeilInfoWhite'
 import { RangePanel } from '../../UI/RangePanel'
+import { translate } from '../../helpers/disctionaryUnits'
 
 type Props = {
     namesData: object,
@@ -79,7 +80,7 @@ function pushCeils(arr: React.ReactNode[], namesData: object, infoData: object) 
             for (let rowKey in infoData['data'][valueKey]) {
                 //@ts-ignore
                 propsCeils.data.push({
-                    label: 't',
+                    label: translate(rowKey),
                     //@ts-ignore
                     value: Math.round(infoData['data'][valueKey][rowKey]) as number
                 })
