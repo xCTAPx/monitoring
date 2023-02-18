@@ -64,7 +64,7 @@ const Parameters = styled.div`
     align-items: center;
     width: 95%;
     margin: auto;
-    height: 55vh;
+    height: 50vh;
     overflow-x: hidden;
     overflow-y: auto;
 `
