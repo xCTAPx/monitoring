@@ -28,18 +28,6 @@ export const General: React.FC<Props> = () => {
     const openDetails = (id: string, params?: OpenDetailsParams) =>
         navigate(`/details/${id}`, { state: params })
 
-    useEffect(() => {
-        const fetchSomething = async () => {
-            const response = await apiClient
-                .post('https://jsonplaceholder.typicode.com/todos', {
-                    a: 1,
-                    b: true,
-                })
-                .json()
-        }
-
-        fetchSomething()
-    }, [])
     return (
         <MainLayout
             title="Прогнозная аналитика эксгаустеров"
