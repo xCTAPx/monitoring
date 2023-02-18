@@ -1,5 +1,5 @@
 import React from 'react'
-import { useLocation, useNavigate, useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import styled from 'styled-components'
 import { MainLayout } from '../../layouts'
 import { EScreens, Switch } from '../../UI'
@@ -8,11 +8,10 @@ import { CeilInfoWhite } from '../../UI/CeilInfoWhite'
 import { RangePanel } from '../../UI/RangePanel'
 import { disctionaryUnits } from '../../helpers/disctionaryUnits'
 import { getBlockType, blockTypes } from '../../helpers/getBlockType'
+import mock from '../General/mock.json'
+import namesData from '../../examples/names.json'
 
-type Props = {
-    namesData: object,
-    infoData: object
-}
+type Props = {}
 
 const Grid = styled.div`
     display: flex;
@@ -20,17 +19,18 @@ const Grid = styled.div`
 `
 
 
-export const Details: React.FC<Props> = ({ namesData, infoData }) => {
+export const Details: React.FC<Props> = () => {
     const navigate = useNavigate()
     const params = useParams()
     const { id } = params;
     let firstRow: React.ReactNode[] = [];
     let secondRow: React.ReactNode[] = [];
     //@ts-ignore
-    pushCeils(firstRow, secondRow, namesData, infoData)
+    pushCeils(firstRow, secondRow, namesData[id], mock[id])
     const openTrends = (id: string) => navigate(`/trends/${id}`)
 
-    return <MainLayout title="Прогнозная аналитика эксгаустеров" screenTitle={`Эксгаустер №${id}`} slot={
+    //@ts-ignore
+    return <MainLayout title="Прогнозная аналитика эксгаустеров" screenTitle={namesData[id].name} slot={
         <Switch
             activeScreen={EScreens.SCHEMA}
             onSecondClick={() => openTrends(id?.toString() ?? '')}
@@ -42,7 +42,6 @@ export const Details: React.FC<Props> = ({ namesData, infoData }) => {
 
         <Grid>
             {secondRow}
-            {/* <CeilInfoWhite data={infoData[0]} /> */}
         </Grid>
     </MainLayout>
 }
@@ -51,21 +50,16 @@ function pushCeils(firstRow: React.ReactNode[], secondRow: React.ReactNode[], na
 
     //@ts-ignore
     for (let valueKey in infoData['data']) {
-        //@ts-ignore
-        console.log(infoData['data'])
-
-        //@ts-ignore
-
         const propsCeils = {
             //@ts-ignore
             title: namesData[valueKey]['name'],
             data: []
         }
-        console.log()
         //@ts-ignore
         for (let rowKey in infoData['data'][valueKey]) {
             //@ts-ignore
             propsCeils.data.push({
+                //@ts-ignore
                 label: disctionaryUnits(rowKey),
                 //@ts-ignore
                 value: infoData['data'][valueKey][rowKey].toFixed(2) as number

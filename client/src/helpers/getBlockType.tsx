@@ -10,7 +10,6 @@ export enum blockTypes {
 }
 
 export const getBlockType = (string: string): string => {
-    console.log(string)
     if (string.includes('bearing')) {
         return blockTypes.SMALL_CEIL
     } else if (

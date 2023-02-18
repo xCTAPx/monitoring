@@ -1,14 +1,12 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
-import { apiClient } from '../../apiClient'
 import { MainLayout } from '../../layouts'
 import { EStatuses } from '../../types'
 import { Pannel } from '../../UI'
 import { Exhauster, Aglomachine } from './components'
 import mock from './mock.json'
 import { mapData } from './mapper'
-import example from '../../examples/values.json'
 import names from '../../examples/names.json'
 
 type Props = {}
@@ -22,8 +20,7 @@ const Content = styled.section`
 `
 
 export const General: React.FC<Props> = () => {
-    const mockObj = JSON.parse(JSON.stringify(mock))
-    const params = mapData(mockObj, names)
+    const params = mapData(mock, names)
     const navigate = useNavigate()
 
     const openDetails = (id: string, params?: OpenDetailsParams) =>
@@ -42,14 +39,14 @@ export const General: React.FC<Props> = () => {
                         status={params[0].enabled ? EStatuses.AVAILABLE : EStatuses.ERROR}
                         date={params[0].datetime}
                         params={params[0].data}
-                        onOpen={() => openDetails(params[0].name)}
+                        onOpen={() => openDetails('exhauster1')}
                     />
                     <Exhauster
                         name={params[1].name}
                         status={params[1].enabled ? EStatuses.AVAILABLE : EStatuses.ERROR}
                         date={params[1].datetime}
                         params={params[1].data}
-                        onOpen={() => openDetails(params[1].name)}
+                        onOpen={() => openDetails('exhauster2')}
                     />
                 </Aglomachine>
                 <Aglomachine number={2}>
@@ -58,14 +55,14 @@ export const General: React.FC<Props> = () => {
                         status={params[2].enabled ? EStatuses.AVAILABLE : EStatuses.ERROR}
                         date={params[2].datetime}
                         params={params[2].data}
-                        onOpen={() => openDetails(params[2].name)}
+                        onOpen={() => openDetails('exhauster3')}
                     />
                     <Exhauster
                         name={params[3].name}
                         status={params[3].enabled ? EStatuses.AVAILABLE : EStatuses.ERROR}
                         date={params[3].datetime}
                         params={params[3].data}
-                        onOpen={() => openDetails(params[3].name)}
+                        onOpen={() => openDetails('exhauster4')}
                     />
                 </Aglomachine>
                 <Aglomachine number={3}>
@@ -74,14 +71,14 @@ export const General: React.FC<Props> = () => {
                         status={params[4].enabled ? EStatuses.AVAILABLE : EStatuses.ERROR}
                         date={params[4].datetime}
                         params={params[4].data}
-                        onOpen={() => openDetails(params[4].name)}
+                        onOpen={() => openDetails('exhauster5')}
                     />
                     <Exhauster
                         name={params[5].name}
                         status={params[5].enabled ? EStatuses.AVAILABLE : EStatuses.ERROR}
                         date={params[5].datetime}
                         params={params[5].data}
-                        onOpen={() => openDetails(params[5].name)}
+                        onOpen={() => openDetails('exhauster6')}
                     />
                 </Aglomachine>
             </Content>
