@@ -7,149 +7,24 @@ import { CeilInfo } from '../../UI/CeilInfo'
 import { CeilInfoWhite } from '../../UI/CeilInfoWhite'
 import { RangePanel } from '../../UI/RangePanel'
 
-type Props = {}
+type Props = {
+    namesData: object,
+    infoData: object
+}
 
 const Grid = styled.div`
     display: flex;
+    flex-wrap: wrap;
 `
 
-const infoData = [
-    {
-        title: 'ПС - 1',
-        data: [
-            {
-                label: "T C",
-                value: 220
-            },
-            {
-                label: "T C",
-                value: 220
-            },
-            {
-                label: "T C",
-                value: 220
-            },
-            {
-                label: "T C",
-                value: 220
-            },
-            {
-                label: "T C",
-                value: 220
-            },
-        ]
-    },
-    {
-        title: 'ПС - 1',
-        data: [
-            {
-                label: "T C",
-                value: 220
-            },
-            {
-                label: "T C",
-                value: 220
-            },
-            {
-                label: "T C",
-                value: 220
-            },
-            {
-                label: "T C",
-                value: 220
-            },
-            {
-                label: "T C",
-                value: 220
-            },
-        ]
-    },
-    {
-        title: 'ПС - 1',
-        data: [
-            {
-                label: "T C",
-                value: 220
-            },
-            {
-                label: "T C",
-                value: 220
-            },
-            {
-                label: "T C",
-                value: 220
-            },
-            {
-                label: "T C",
-                value: 220
-            },
-            {
-                label: "T C",
-                value: 220
-            },
-        ]
-    },
-    {
-        title: 'ПС - 1',
-        data: [
-            {
-                label: "T C",
-                value: 220
-            },
-            {
-                label: "T C",
-                value: 220
-            },
-            {
-                label: "T C",
-                value: 220
-            },
-            {
-                label: "T C",
-                value: 220
-            },
-            {
-                label: "T C",
-                value: 220
-            },
-        ]
-    },
-    {
-        title: 'ПС - 1',
-        data: [
-            {
-                label: "T C",
-                value: 220
-            },
-            {
-                label: "T C",
-                value: 220
-            },
-            {
-                label: "T C",
-                value: 220
-            },
-            {
-                label: "T C",
-                value: 220
-            },
-            {
-                label: "T C",
-                value: 220
-            }, {
-                label: "T C",
-                value: 220
-            },
-        ]
-    }
-]
 
-export const Details: React.FC<Props> = () => {
+export const Details: React.FC<Props> = ({ namesData, infoData }) => {
     const navigate = useNavigate()
-
     const params = useParams()
-    const { id } = params
-
+    const { id } = params;
+    let infoCeils: React.ReactNode[] = [];
+    //@ts-ignore
+    pushCeils(infoCeils, namesData, infoData)
     const openTrends = (id: string) => navigate(`/trends/${id}`)
 
     return <MainLayout title="Прогнозная аналитика эксгаустеров" screenTitle={`Эксгаустер №${id}`} slot={
@@ -164,8 +39,62 @@ export const Details: React.FC<Props> = () => {
         </Grid>
 
         <Grid>
-            {infoData.map(e => <CeilInfo data={e} />)}
-            <CeilInfoWhite data={infoData[0]} />
+            {infoCeils}
+            {/* <CeilInfoWhite data={infoData[0]} /> */}
         </Grid>
     </MainLayout>
+}
+
+function pushCeils(arr: React.ReactNode[], namesData: object, infoData: object) {
+
+
+    //@ts-ignore
+    //@ts-ignore
+    // console.log(key, infoData)
+
+    //@ts-ignore
+    for (let valueKey in infoData['data']) {
+        //@ts-ignore
+        //@ts-ignore
+        if (valueKey.includes('bearing')) {
+            // console.log(valueKey)
+            // console.log(namesData)
+            //@ts-ignore
+
+            const propsCeils = {
+                //@ts-ignore
+                title: namesData[valueKey]['name'],
+                data: []
+            }
+            console.log()
+            //@ts-ignore
+            // const newRow = {
+            //     //@ts-ignore
+            //     label: 't',
+            //     //@ts-ignore
+
+            //     value: Math.round(infoData['data'][valueKey] as number)
+            // }
+
+            for (let rowKey in infoData['data'][valueKey]) {
+                //@ts-ignore
+                propsCeils.data.push({
+                    label: 't',
+                    //@ts-ignore
+                    value: Math.round(infoData['data'][valueKey][rowKey]) as number
+                })
+
+            }
+
+            //@ts-ignore
+
+            // propsCeils.data.push(newRow)
+            arr.push(<CeilInfo key={Math.random()} data={propsCeils} />)
+
+        }
+
+    }
+    //@ts-ignore
+
+    // }
 }
