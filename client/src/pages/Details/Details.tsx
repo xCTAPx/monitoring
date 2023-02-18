@@ -6,7 +6,8 @@ import { EScreens, Switch } from '../../UI'
 import { CeilInfo } from '../../UI/CeilInfo'
 import { CeilInfoWhite } from '../../UI/CeilInfoWhite'
 import { RangePanel } from '../../UI/RangePanel'
-import { translate } from '../../helpers/disctionaryUnits'
+import { disctionaryUnits } from '../../helpers/disctionaryUnits'
+import { getBlockType, blockTypes } from '../../helpers/getBlockType'
 
 type Props = {
     namesData: object,
@@ -23,9 +24,10 @@ export const Details: React.FC<Props> = ({ namesData, infoData }) => {
     const navigate = useNavigate()
     const params = useParams()
     const { id } = params;
-    let infoCeils: React.ReactNode[] = [];
+    let firstRow: React.ReactNode[] = [];
+    let secondRow: React.ReactNode[] = [];
     //@ts-ignore
-    pushCeils(infoCeils, namesData, infoData)
+    pushCeils(firstRow, secondRow, namesData, infoData)
     const openTrends = (id: string) => navigate(`/trends/${id}`)
 
     return <MainLayout title="Прогнозная аналитика эксгаустеров" screenTitle={`Эксгаустер №${id}`} slot={
@@ -35,66 +37,79 @@ export const Details: React.FC<Props> = ({ namesData, infoData }) => {
         />
     }>
         <Grid>
-            <RangePanel title="Маслобак" max={100} value={70} units={'°C'} />
-            <RangePanel title="Заслонка" max={100} value={30} units={'%'} />
+            {firstRow}
         </Grid>
 
         <Grid>
-            {infoCeils}
+            {secondRow}
             {/* <CeilInfoWhite data={infoData[0]} /> */}
         </Grid>
     </MainLayout>
 }
 
-function pushCeils(arr: React.ReactNode[], namesData: object, infoData: object) {
-
-
-    //@ts-ignore
-    //@ts-ignore
-    // console.log(key, infoData)
+function pushCeils(firstRow: React.ReactNode[], secondRow: React.ReactNode[], namesData: object, infoData: object) {
 
     //@ts-ignore
     for (let valueKey in infoData['data']) {
         //@ts-ignore
+        console.log(infoData['data'])
+
         //@ts-ignore
-        if (valueKey.includes('bearing')) {
-            // console.log(valueKey)
-            // console.log(namesData)
-            //@ts-ignore
 
-            const propsCeils = {
+        const propsCeils = {
+            //@ts-ignore
+            title: namesData[valueKey]['name'],
+            data: []
+        }
+        console.log()
+        //@ts-ignore
+        for (let rowKey in infoData['data'][valueKey]) {
+            //@ts-ignore
+            propsCeils.data.push({
+                label: disctionaryUnits(rowKey),
                 //@ts-ignore
-                title: namesData[valueKey]['name'],
-                data: []
-            }
-            console.log()
-            //@ts-ignore
-            // const newRow = {
-            //     //@ts-ignore
-            //     label: 't',
-            //     //@ts-ignore
-
-            //     value: Math.round(infoData['data'][valueKey] as number)
-            // }
-
-            for (let rowKey in infoData['data'][valueKey]) {
-                //@ts-ignore
-                propsCeils.data.push({
-                    label: translate(rowKey),
-                    //@ts-ignore
-                    value: Math.round(infoData['data'][valueKey][rowKey]) as number
-                })
-
-            }
-
-            //@ts-ignore
-
-            // propsCeils.data.push(newRow)
-            arr.push(<CeilInfo key={Math.random()} data={propsCeils} />)
+                value: infoData['data'][valueKey][rowKey].toFixed(2) as number
+            })
 
         }
 
+        //@ts-ignore
+
+        // propsCeils.data.push(newRow)
+        const blockType = getBlockType(valueKey);
+        if (blockType == blockTypes.SMALL_CEIL) {
+            secondRow.push(<CeilInfo key={Math.random()} data={propsCeils} />)
+        } else if (blockType == blockTypes.BIG_CEIL) {
+            secondRow.push(<CeilInfoWhite key={Math.random()} data={propsCeils} />)
+        } else if (blockType == blockTypes.RANGE) {
+            //@ts-ignore
+            firstRow.push(<RangePanel
+                key={Math.random()}
+                title={propsCeils.title}
+                max={100}
+                //@ts-ignore
+                value={propsCeils.data[0].value}
+                //@ts-ignore
+                units={propsCeils.data[0].label} />)
+
+            if (valueKey == 'oil_system') {
+                firstRow.push(<RangePanel
+                    key={Math.random()}
+                    title={propsCeils.title}
+                    max={6}
+                    //@ts-ignore
+                    value={propsCeils.data[1].value}
+                    //@ts-ignore
+                    units={propsCeils.data[1].label} />)
+            }
+        }
+
+        // костыли
+
+
     }
+
+
     //@ts-ignore
 
     // }
