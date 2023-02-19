@@ -16,9 +16,8 @@ import { MainLayout } from '../../layouts'
 import { Switch, EScreens } from '../../UI'
 import { EColors } from '../../utils'
 import { Row } from './components'
-import { checkIsShown, getParamsList } from './utils'
+import { checkIsShown } from './utils'
 import namesData from '../../examples/names.json'
-import values from '../../examples/values.json'
 import dayjs from 'dayjs'
 import { apiClient } from '../../apiClient'
 
@@ -37,6 +36,7 @@ const Content = styled.div`
 const ChartWrapper = styled.div`
     width: 80%;
     height: 80vh;
+    padding-left: 40px;
 `
 const Menu = styled.div`
     ::-webkit-scrollbar {
@@ -92,7 +92,7 @@ export const Trends: React.FC<Props> = () => {
             for (let prop in obj) {
                 const props = `${key}_${prop}`
                 params.push(props)
-                gParamsObj[props] = obj[prop]
+                gParamsObj[props] = obj[prop].toFixed(2)
             }
             const name = dayjs(d[id].datetime).format('HH:mm DD.MM')
             gParamsObj.name = name
