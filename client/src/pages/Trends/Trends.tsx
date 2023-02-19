@@ -19,6 +19,7 @@ import { Row } from './components'
 import { checkIsShown, getParamsList } from './utils'
 import namesData from '../../examples/names.json'
 import mock from '../General/mock.json'
+import dayjs from 'dayjs'
 
 type Props = {}
 
@@ -57,149 +58,6 @@ const Menu = styled.div`
     overflow-y: auto;
 `
 
-const data = [
-    {
-        name: '1',
-        bearing1_temperature: Math.random() * 1000,
-        bearing1_vibration_axial: Math.random() * 1000,
-        bearing1_vibration_horizontal: Math.random() * 1000,
-        bearing1_vibration_vertical: Math.random() * 1000,
-        bearing2_temperature: Math.random() * 1000,
-        bearing2_vibration_axial: Math.random() * 1000,
-        bearing2_vibration_horizontal: Math.random() * 1000,
-        bearing2_vibration_vertical: Math.random() * 1000,
-        bearing3_temperature: Math.random() * 1000,
-        bearing4_temperature: Math.random() * 1000,
-        bearing5_temperature: Math.random() * 1000,
-        bearing6_temperature: Math.random() * 1000,
-        bearing7_temperature: Math.random() * 1000,
-        bearing7_vibration_axial: Math.random() * 1000,
-        bearing7_vibration_horizontal: Math.random() * 1000,
-        bearing7_vibration_vertical: Math.random() * 1000,
-        bearing8_temperature: Math.random() * 1000,
-        bearing8_vibration_axial: Math.random() * 1000,
-        bearing8_vibration_horizontal: Math.random() * 1000,
-        bearing8_vibration_vertical: Math.random() * 1000,
-        bearing9_temperature: Math.random() * 1000,
-        cooler_temperature_oil_after: Math.random() * 1000,
-        cooler_temperature_oil_before: Math.random() * 1000,
-        cooler_temperature_water_after: Math.random() * 1000,
-        cooler_temperature_water_before: Math.random() * 1000,
-        gas_manifold_temperature_before: Math.random() * 1000,
-        gas_manifold_underpressure_before: Math.random() * 1000,
-        valve_position_gas_valve_open: Math.random() * 1000,
-        main_drive_stator_current: Math.random() * 1000,
-        oil_system_oil_level: Math.random() * 1000,
-        oil_system_oil_pressure: Math.random() * 1000,
-        equipment_work: Math.random() * 1000,
-    },
-    {
-        name: '2',
-        bearing1_temperature: Math.random() * 1000,
-        bearing1_vibration_axial: Math.random() * 1000,
-        bearing1_vibration_horizontal: Math.random() * 1000,
-        bearing1_vibration_vertical: Math.random() * 1000,
-        bearing2_temperature: Math.random() * 1000,
-        bearing2_vibration_axial: Math.random() * 1000,
-        bearing2_vibration_horizontal: Math.random() * 1000,
-        bearing2_vibration_vertical: Math.random() * 1000,
-        bearing3_temperature: Math.random() * 1000,
-        bearing4_temperature: Math.random() * 1000,
-        bearing5_temperature: Math.random() * 1000,
-        bearing6_temperature: Math.random() * 1000,
-        bearing7_temperature: Math.random() * 1000,
-        bearing7_vibration_axial: Math.random() * 1000,
-        bearing7_vibration_horizontal: Math.random() * 1000,
-        bearing7_vibration_vertical: Math.random() * 1000,
-        bearing8_temperature: Math.random() * 1000,
-        bearing8_vibration_axial: Math.random() * 1000,
-        bearing8_vibration_horizontal: Math.random() * 1000,
-        bearing8_vibration_vertical: Math.random() * 1000,
-        bearing9_temperature: Math.random() * 1000,
-        cooler_temperature_oil_after: Math.random() * 1000,
-        cooler_temperature_oil_before: Math.random() * 1000,
-        cooler_temperature_water_after: Math.random() * 1000,
-        cooler_temperature_water_before: Math.random() * 1000,
-        gas_manifold_temperature_before: Math.random() * 1000,
-        gas_manifold_underpressure_before: Math.random() * 1000,
-        valve_position_gas_valve_open: Math.random() * 1000,
-        main_drive_stator_current: Math.random() * 1000,
-        oil_system_oil_level: Math.random() * 1000,
-        oil_system_oil_pressure: Math.random() * 1000,
-        equipment_work: Math.random() * 1000,
-    },
-    {
-        name: '3',
-        bearing1_temperature: Math.random() * 1000,
-        bearing1_vibration_axial: Math.random() * 1000,
-        bearing1_vibration_horizontal: Math.random() * 1000,
-        bearing1_vibration_vertical: Math.random() * 1000,
-        bearing2_temperature: Math.random() * 1000,
-        bearing2_vibration_axial: Math.random() * 1000,
-        bearing2_vibration_horizontal: Math.random() * 1000,
-        bearing2_vibration_vertical: Math.random() * 1000,
-        bearing3_temperature: Math.random() * 1000,
-        bearing4_temperature: Math.random() * 1000,
-        bearing5_temperature: Math.random() * 1000,
-        bearing6_temperature: Math.random() * 1000,
-        bearing7_temperature: Math.random() * 1000,
-        bearing7_vibration_axial: Math.random() * 1000,
-        bearing7_vibration_horizontal: Math.random() * 1000,
-        bearing7_vibration_vertical: Math.random() * 1000,
-        bearing8_temperature: Math.random() * 1000,
-        bearing8_vibration_axial: Math.random() * 1000,
-        bearing8_vibration_horizontal: Math.random() * 1000,
-        bearing8_vibration_vertical: Math.random() * 1000,
-        bearing9_temperature: Math.random() * 1000,
-        cooler_temperature_oil_after: Math.random() * 1000,
-        cooler_temperature_oil_before: Math.random() * 1000,
-        cooler_temperature_water_after: Math.random() * 1000,
-        cooler_temperature_water_before: Math.random() * 1000,
-        gas_manifold_temperature_before: Math.random() * 1000,
-        gas_manifold_underpressure_before: Math.random() * 1000,
-        valve_position_gas_valve_open: Math.random() * 1000,
-        main_drive_stator_current: Math.random() * 1000,
-        oil_system_oil_level: Math.random() * 1000,
-        oil_system_oil_pressure: Math.random() * 1000,
-        equipment_work: Math.random() * 1000,
-    },
-    {
-        name: '4',
-        bearing1_temperature: Math.random() * 1000,
-        bearing1_vibration_axial: Math.random() * 1000,
-        bearing1_vibration_horizontal: Math.random() * 1000,
-        bearing1_vibration_vertical: Math.random() * 1000,
-        bearing2_temperature: Math.random() * 1000,
-        bearing2_vibration_axial: Math.random() * 1000,
-        bearing2_vibration_horizontal: Math.random() * 1000,
-        bearing2_vibration_vertical: Math.random() * 1000,
-        bearing3_temperature: Math.random() * 1000,
-        bearing4_temperature: Math.random() * 1000,
-        bearing5_temperature: Math.random() * 1000,
-        bearing6_temperature: Math.random() * 1000,
-        bearing7_temperature: Math.random() * 1000,
-        bearing7_vibration_axial: Math.random() * 1000,
-        bearing7_vibration_horizontal: Math.random() * 1000,
-        bearing7_vibration_vertical: Math.random() * 1000,
-        bearing8_temperature: Math.random() * 1000,
-        bearing8_vibration_axial: Math.random() * 1000,
-        bearing8_vibration_horizontal: Math.random() * 1000,
-        bearing8_vibration_vertical: Math.random() * 1000,
-        bearing9_temperature: Math.random() * 1000,
-        cooler_temperature_oil_after: Math.random() * 1000,
-        cooler_temperature_oil_before: Math.random() * 1000,
-        cooler_temperature_water_after: Math.random() * 1000,
-        cooler_temperature_water_before: Math.random() * 1000,
-        gas_manifold_temperature_before: Math.random() * 1000,
-        gas_manifold_underpressure_before: Math.random() * 1000,
-        valve_position_gas_valve_open: Math.random() * 1000,
-        main_drive_stator_current: Math.random() * 1000,
-        oil_system_oil_level: Math.random() * 1000,
-        oil_system_oil_pressure: Math.random() * 1000,
-        equipment_work: Math.random() * 1000,
-    },
-]
-
 export const Trends: React.FC<Props> = () => {
     const navigate = useNavigate()
 
@@ -214,13 +72,17 @@ export const Trends: React.FC<Props> = () => {
     // @ts-ignore
     const data1 = mock[id]
     const params = []
+    const gParams = {}
 
     for (let key in data1.data) {
         const obj = data1.data[key]
         for (let prop in obj) {
             const props = `${key}_${prop}`
             params.push(props)
+            gParams[props] = obj[prop]
         }
+        const name = dayjs(data1.datetime).format('HH:mm DD.MM')
+        gParams.name = name
     }
 
     const initialParamsList: IParam[] = useMemo(
@@ -229,6 +91,8 @@ export const Trends: React.FC<Props> = () => {
     )
 
     const [paramsList, setParamsList] = useState<IParam[]>(initialParamsList)
+    const [gData, setGData] = useState([gParams, gParams, gParams])
+    console.log(gData)
 
     const checkIfParamShown = useCallback(
         (parametrName: string) => {
@@ -273,7 +137,7 @@ export const Trends: React.FC<Props> = () => {
                 <ChartWrapper>
                     <ResponsiveContainer width="100%" height="100%">
                         <LineChart
-                            data={data}
+                            data={gData}
                             margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
                         >
                             <CartesianGrid strokeDasharray="1 1" />
