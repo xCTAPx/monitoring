@@ -9,10 +9,11 @@ class ApiClient {
     get(path: string, params?: QueryParams) {
         const searchParams = convertObjectToUrlParams(params)
 
-        return new Promise((resolve) => {
-            console.log('request')
-            resolve(mock)
-        })
+        // for tests
+        // return new Promise((resolve) => {
+        //     console.log('request')
+        //     resolve(mock)
+        // })
         return _ky.get(path, { searchParams })
     }
 
