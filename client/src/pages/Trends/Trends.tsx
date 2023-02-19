@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo, useState } from 'react'
+import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import {
     Brush,
@@ -20,6 +20,7 @@ import { checkIsShown, getParamsList } from './utils'
 import namesData from '../../examples/names.json'
 import values from '../../examples/values.json'
 import dayjs from 'dayjs'
+import { apiClient } from '../../apiClient'
 
 type Props = {}
 
@@ -60,6 +61,20 @@ const Menu = styled.div`
 
 export const Trends: React.FC<Props> = () => {
     const navigate = useNavigate()
+    const [data1, setData1] = useState([])
+
+    useEffect(() => {
+        async function fetchData() {
+            const resp = await apiClient.get('/test')
+            setData1(resp)
+        }
+
+        try {
+            fetchData()
+        } catch (e) {
+            console.error(e)
+        }
+    }, [])
 
 
     const openDetails = (id: string) => navigate(`/details/${id}`)
@@ -67,21 +82,24 @@ export const Trends: React.FC<Props> = () => {
     const routeParams = useParams()
     const { id } = routeParams
 
-    // @ts-ignore
-    const data1 = values[0][id]
     const params = []
-    const gParams = {}
+    const gParams = []
 
-    for (let key in data1.data) {
-        const obj = data1.data[key]
-        for (let prop in obj) {
-            const props = `${key}_${prop}`
-            params.push(props)
-            gParams[props] = obj[prop]
+    data1.forEach(d => {
+        const gParamsObj = {}
+        for (let key in d[id].data) {
+            const obj = d[id].data[key]
+            for (let prop in obj) {
+                const props = `${key}_${prop}`
+                params.push(props)
+                gParamsObj[props] = obj[prop]
+            }
+            const name = dayjs(d[id].datetime).format('HH:mm DD.MM')
+            gParamsObj.name = name
         }
-        const name = dayjs(data1.datetime).format('HH:mm DD.MM')
-        gParams.name = name
-    }
+        gParams.push(gParamsObj)
+    })
+
 
     const initialParamsList: IParam[] = useMemo(
         () => params.map((param) => ({ name: param, isShown: true })),
@@ -89,14 +107,17 @@ export const Trends: React.FC<Props> = () => {
     )
 
     const [paramsList, setParamsList] = useState<IParam[]>(initialParamsList)
-    const [gData, setGData] = useState([gParams, gParams, gParams])
-    console.log(gData)
+
+    useEffect(() => {
+        if (JSON.stringify(initialParamsList) !== JSON.stringify(paramsList))
+            setParamsList(initialParamsList)
+    }, [initialParamsList])
 
     const checkIfParamShown = useCallback(
         (parametrName: string) => {
             return checkIsShown(paramsList, parametrName)
         },
-        [paramsList]
+        [paramsList, gParams]
     )
 
     const onChangeValue = useCallback((name: string, value: boolean) => {
@@ -135,7 +156,7 @@ export const Trends: React.FC<Props> = () => {
                 <ChartWrapper>
                     <ResponsiveContainer width="100%" height="100%">
                         <LineChart
-                            data={gData}
+                            data={gParams}
                             margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
                         >
                             <CartesianGrid strokeDasharray="1 1" />

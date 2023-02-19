@@ -426,5 +426,433 @@
                 }
             }
         }
+    },
+    {
+        "exhauster1": {
+            "id": 1,
+            "datetime": "2023-02-18T06:27:25.439816",
+            "data": {
+                "bearing1": {
+                    "temperature": 92.30000305175781,
+                    "vibration_axial": 0.25462961196899414,
+                    "vibration_horizontal": 0.20254628360271454,
+                    "vibration_vertical": 0.28935185074806213
+                },
+                "bearing2": {
+                    "temperature": 56.70000457763672,
+                    "vibration_axial": 0.21412037312984467,
+                    "vibration_horizontal": 0.3298611640930176,
+                    "vibration_vertical": 0.5844907760620117
+                },
+                "bearing3": {
+                    "temperature": 48.099998474121094
+                },
+                "bearing4": {
+                    "temperature": 51.19999694824219
+                },
+                "bearing5": {
+                    "temperature": 41.0
+                },
+                "bearing6": {
+                    "temperature": 42.19999694824219
+                },
+                "bearing7": {
+                    "temperature": 38.20000457763672,
+                    "vibration_axial": 1.267361044883728,
+                    "vibration_horizontal": 0.4861111044883728,
+                    "vibration_vertical": 1.077122449874878
+                },
+                "bearing8": {
+                    "temperature": 41.69999694824219,
+                    "vibration_axial": 0.8969907760620117,
+                    "vibration_horizontal": 0.5150462985038757,
+                    "vibration_vertical": 0.2430555522441864
+                },
+                "bearing9": {
+                    "temperature": 42.29999542236328
+                },
+                "cooler": {
+                    "temperature_oil_after": 29.900001525878906,
+                    "temperature_oil_before": 33.0,
+                    "temperature_water_after": 26.099998474121094,
+                    "temperature_water_before": 25.099998474121094
+                },
+                "gas_manifold": {
+                    "temperature_before": 112.90879821777344,
+                    "underpressure_before": 759.5486450195312
+                },
+                "valve_position": {
+                    "gas_valve_open": 1.0
+                },
+                "main_drive": {
+                    "stator_current": 183.72390747070312
+                },
+                "oil_system": {
+                    "oil_level": 79.04580688476562,
+                    "oil_pressure": 2.1243324279785156
+                },
+                "equipment": {
+                    "work": 1.0
+                }
+            }
+        },
+        "exhauster2": {
+            "id": 2,
+            "datetime": "2023-02-18T06:27:25.439816",
+            "data": {
+                "bearing1": {
+                    "temperature": 53.19999694824219,
+                    "vibration_axial": 2.3553240299224854,
+                    "vibration_horizontal": 1.2731481790542603,
+                    "vibration_vertical": 1.7881944179534912
+                },
+                "bearing2": {
+                    "temperature": 63.30000305175781,
+                    "vibration_axial": 1.736111044883728,
+                    "vibration_horizontal": 1.082175850868225,
+                    "vibration_vertical": 1.516203761100769
+                },
+                "bearing3": {
+                    "temperature": 46.599998474121094
+                },
+                "bearing4": {
+                    "temperature": 45.099998474121094
+                },
+                "bearing5": {
+                    "temperature": 36.400001525878906
+                },
+                "bearing6": {
+                    "temperature": 36.69999694824219
+                },
+                "bearing7": {
+                    "temperature": 33.099998474121094,
+                    "vibration_axial": 0.49768519401550293,
+                    "vibration_horizontal": 0.6655092239379883,
+                    "vibration_vertical": 0.8159722089767456
+                },
+                "bearing8": {
+                    "temperature": 36.900001525878906,
+                    "vibration_axial": 1.689814805984497,
+                    "vibration_horizontal": 1.5393518209457397,
+                    "vibration_vertical": 0.7002314925193787
+                },
+                "bearing9": {
+                    "temperature": 39.400001525878906
+                },
+                "cooler": {
+                    "temperature_oil_after": 25.900001525878906,
+                    "temperature_oil_before": 29.400001525878906,
+                    "temperature_water_after": 24.699996948242188,
+                    "temperature_water_before": 24.599998474121094
+                },
+                "gas_manifold": {
+                    "temperature_before": 114.50879669189453,
+                    "underpressure_before": 706.0184936523438
+                },
+                "valve_position": {
+                    "gas_valve_open": 1.0
+                },
+                "main_drive": {
+                    "stator_current": 166.9973907470703
+                },
+                "oil_system": {
+                    "oil_level": 91.63400268554688,
+                    "oil_pressure": 22.08935809135437
+                },
+                "equipment": {
+                    "work": 0.0
+                }
+            }
+        },
+        "exhauster3": {
+            "id": 3,
+            "datetime": "2023-02-18T06:27:25.439816",
+            "data": {
+                "bearing1": {
+                    "temperature": 48.400001525878906,
+                    "vibration_axial": 0.919465959072113,
+                    "vibration_horizontal": 1.423611044883728,
+                    "vibration_vertical": 1.469907522201538
+                },
+                "bearing2": {
+                    "temperature": 47.399993896484375,
+                    "vibration_axial": 1.4409722089767456,
+                    "vibration_horizontal": 2.037036895751953,
+                    "vibration_vertical": 2.00810170173645
+                },
+                "bearing3": {
+                    "temperature": 42.19999694824219
+                },
+                "bearing4": {
+                    "temperature": 45.599998474121094
+                },
+                "bearing5": {
+                    "temperature": 41.19999694824219
+                },
+                "bearing6": {
+                    "temperature": 39.70000457763672
+                },
+                "bearing7": {
+                    "temperature": 33.099998474121094,
+                    "vibration_axial": 2.0536582469940186,
+                    "vibration_horizontal": 2.3256311416625977,
+                    "vibration_vertical": 2.1469907760620117
+                },
+                "bearing8": {
+                    "temperature": 43.099998474121094,
+                    "vibration_axial": 1.221064805984497,
+                    "vibration_horizontal": 1.7997684478759766,
+                    "vibration_vertical": 2.4884259700775146
+                },
+                "bearing9": {
+                    "temperature": 39.400001525878906
+                },
+                "cooler": {
+                    "temperature_oil_after": 34.599998474121094,
+                    "temperature_oil_before": 36.400001525878906,
+                    "temperature_water_after": 25.5,
+                    "temperature_water_before": 23.0
+                },
+                "gas_manifold": {
+                    "temperature_before": 116.43217468261719,
+                    "underpressure_before": 456.4525451660156
+                },
+                "valve_position": {
+                    "gas_valve_open": 1.0,
+                    "gas_valve_position": 10.0
+                },
+                "main_drive": {
+                    "rotor_current": 1613.0,
+                    "rotor_voltage": 5.0,
+                    "stator_current": 2111.0,
+                    "stator_voltage": 106.0
+                },
+                "oil_system": {
+                    "oil_level": 69.80000305175781,
+                    "oil_pressure": 0.8050000071525574
+                },
+                "equipment": {
+                    "work": 1.0
+                }
+            }
+        },
+        "exhauster4": {
+            "id": 4,
+            "datetime": "2023-02-18T06:27:25.439816",
+            "data": {
+                "bearing1": {
+                    "temperature": 50.80000305175781,
+                    "vibration_axial": 0.5555555820465088,
+                    "vibration_horizontal": 1.9733797311782837,
+                    "vibration_vertical": 1.7766202688217163
+                },
+                "bearing2": {
+                    "temperature": 54.49999237060547,
+                    "vibration_axial": 1.2094907760620117,
+                    "vibration_horizontal": 1.6840277910232544,
+                    "vibration_vertical": 2.32060170173645
+                },
+                "bearing3": {
+                    "temperature": 44.599998474121094
+                },
+                "bearing4": {
+                    "temperature": 48.69999694824219
+                },
+                "bearing5": {
+                    "temperature": 44.099998474121094
+                },
+                "bearing6": {
+                    "temperature": 43.19999694824219
+                },
+                "bearing7": {
+                    "temperature": 34.79999542236328,
+                    "vibration_axial": 2.598379611968994,
+                    "vibration_horizontal": 1.5393518209457397,
+                    "vibration_vertical": 1.4467592239379883
+                },
+                "bearing8": {
+                    "temperature": 48.900001525878906,
+                    "vibration_axial": 1.4120370149612427,
+                    "vibration_horizontal": 1.3715277910232544,
+                    "vibration_vertical": 0.5787037014961243
+                },
+                "bearing9": {
+                    "temperature": 43.80000305175781
+                },
+                "cooler": {
+                    "temperature_oil_after": 39.900001525878906,
+                    "temperature_oil_before": 33.600006103515625,
+                    "temperature_water_after": 23.400001525878906,
+                    "temperature_water_before": 25.300003051757812
+                },
+                "gas_manifold": {
+                    "temperature_before": 119.232177734375,
+                    "underpressure_before": 468.026611328125
+                },
+                "valve_position": {
+                    "gas_valve_open": 1.0,
+                    "gas_valve_position": 10.0
+                },
+                "main_drive": {
+                    "rotor_current": 967.0,
+                    "rotor_voltage": 2.0,
+                    "stator_current": 1949.0,
+                    "stator_voltage": 106.0
+                },
+                "oil_system": {
+                    "oil_level": 69.0999984741211,
+                    "oil_pressure": 0.8989999890327454
+                },
+                "equipment": {
+                    "work": 1.0
+                }
+            }
+        },
+        "exhauster5": {
+            "id": 5,
+            "datetime": "2023-02-18T06:27:25.439816",
+            "data": {
+                "bearing1": {
+                    "temperature": 43.099998474121094,
+                    "vibration_axial": 0.7523148655891418,
+                    "vibration_horizontal": 1.064814805984497,
+                    "vibration_vertical": 0.983796238899231
+                },
+                "bearing2": {
+                    "temperature": 52.900001525878906,
+                    "vibration_axial": 0.891203761100769,
+                    "vibration_horizontal": 1.09375,
+                    "vibration_vertical": 1.2731481790542603
+                },
+                "bearing3": {
+                    "temperature": 42.29999542236328
+                },
+                "bearing4": {
+                    "temperature": 51.80000305175781
+                },
+                "bearing5": {
+                    "temperature": 47.69999694824219
+                },
+                "bearing6": {
+                    "temperature": 46.400001525878906
+                },
+                "bearing7": {
+                    "temperature": 34.900001525878906,
+                    "vibration_axial": 2.16435170173645,
+                    "vibration_horizontal": 0.8447421193122864,
+                    "vibration_vertical": 0.6365740895271301
+                },
+                "bearing8": {
+                    "temperature": 40.5,
+                    "vibration_axial": 0.8101851344108582,
+                    "vibration_horizontal": 0.5673674941062927,
+                    "vibration_vertical": 0.3298611044883728
+                },
+                "bearing9": {
+                    "temperature": 39.400001525878906
+                },
+                "cooler": {
+                    "temperature_oil_after": 32.80000305175781,
+                    "temperature_oil_before": 33.30000305175781,
+                    "temperature_water_after": -3276.800048828125,
+                    "temperature_water_before": 23.099998474121094
+                },
+                "gas_manifold": {
+                    "temperature_before": 87.79000854492188,
+                    "underpressure_before": 600.4050903320312
+                },
+                "valve_position": {
+                    "gas_valve_closed": 1.0,
+                    "gas_valve_open": 1.0,
+                    "gas_valve_position": 10.0
+                },
+                "main_drive": {
+                    "rotor_current": 2049.0,
+                    "rotor_voltage": 460.0,
+                    "stator_current": 1829.0,
+                    "stator_voltage": 107.0
+                },
+                "oil_system": {
+                    "oil_level": 84.69999694824219,
+                    "oil_pressure": 0.7770000100135803
+                },
+                "equipment": {
+                    "work": 1.0
+                }
+            }
+        },
+        "exhauster6": {
+            "id": 6,
+            "datetime": "2023-02-18T06:27:25.439816",
+            "data": {
+                "bearing1": {
+                    "temperature": 54.49999237060547,
+                    "vibration_axial": 0.2256944477558136,
+                    "vibration_horizontal": 0.6597222089767456,
+                    "vibration_vertical": 0.5439814925193787
+                },
+                "bearing2": {
+                    "temperature": 50.80000305175781,
+                    "vibration_axial": 0.8043981194496155,
+                    "vibration_horizontal": 0.5787037014961243,
+                    "vibration_vertical": 0.5150462985038757
+                },
+                "bearing3": {
+                    "temperature": 51.600006103515625
+                },
+                "bearing4": {
+                    "temperature": 49.900001525878906
+                },
+                "bearing5": {
+                    "temperature": 54.99999237060547
+                },
+                "bearing6": {
+                    "temperature": 49.599998474121094
+                },
+                "bearing7": {
+                    "temperature": 41.5,
+                    "vibration_axial": 0.8796296119689941,
+                    "vibration_horizontal": 0.6018518805503845,
+                    "vibration_vertical": 0.5266203880310059
+                },
+                "bearing8": {
+                    "temperature": 39.69999694824219,
+                    "vibration_axial": 0.6307870149612427,
+                    "vibration_horizontal": 0.41087961196899414,
+                    "vibration_vertical": 0.3156747817993164
+                },
+                "bearing9": {
+                    "temperature": 38.099998474121094
+                },
+                "cooler": {
+                    "temperature_oil_after": 39.600006103515625,
+                    "temperature_oil_before": 41.099998474121094,
+                    "temperature_water_after": -3276.800048828125,
+                    "temperature_water_before": 20.300003051757812
+                },
+                "gas_manifold": {
+                    "temperature_before": 93.39004516601562,
+                    "underpressure_before": 560.6192016601562
+                },
+                "valve_position": {
+                    "gas_valve_closed": 1.0,
+                    "gas_valve_open": 1.0,
+                    "gas_valve_position": 10.0
+                },
+                "main_drive": {
+                    "rotor_current": 2302.0,
+                    "rotor_voltage": 518.0,
+                    "stator_current": 1911.0,
+                    "stator_voltage": 106.0
+                },
+                "oil_system": {
+                    "oil_level": 86.5999984741211,
+                    "oil_pressure": 1.8869999647140503
+                },
+                "equipment": {
+                    "work": 1.0
+                }
+            }
+        }
     }
 ]
