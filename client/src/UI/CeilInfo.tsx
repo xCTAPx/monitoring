@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { EStatuses } from '../types'
 
 type TDatas = {
     title: string,
@@ -6,9 +7,10 @@ type TDatas = {
 }
 type TData = {
     label: string,
-    value: number
+    value: number, 
+    status:string
 }
-type Props = { data: TDatas }
+type Props = { data: TDatas, status?: string }
 const Title = styled.div`
     width: 100%;
     display: flex;
@@ -41,11 +43,11 @@ const CeilLi = styled.li<{ statusColor: string }>`
     margin-top: 3px;
     margin-bottom: 3px;
     padding: 5px;
-    ${({ statusColor }) => statusColor == 'danger' ?
+    ${({ statusColor }) => statusColor == EStatuses.WARNING ?
         "background-color: #EB5835;"
         :
         ""};
-    ${({ statusColor }) => statusColor == 'warning' ?
+    ${({ statusColor }) => statusColor == EStatuses.ERROR?
         "background-color: #FAB82E;"
         :
         ""};
@@ -57,8 +59,10 @@ export const CeilInfo: React.FC<Props> = ({ data }) => {
             <Title>{data.title}</Title>
             <ParList>
                 {data.data.map(e => {
+                    console.log(e.status)
+
                     return (
-                        <CeilLi statusColor='default'><span>{e.label}</span><span>{e.value}</span></CeilLi>
+                        <CeilLi statusColor={e.status || ''}><span>{e.label}</span><span>{e.value}</span></CeilLi>
                     )
                 })}
             </ParList>
