@@ -10,6 +10,7 @@ import { disctionaryUnits } from '../../helpers/disctionaryUnits'
 import { getBlockType, blockTypes } from '../../helpers/getBlockType'
 import namesData from '../../examples/names.json'
 import mock from '../General/mock.json'
+import { checkLevel } from '../../utils/checkLevel'
 
 type Props = {}
 
@@ -50,6 +51,13 @@ function pushCeils(firstRow: React.ReactNode[], secondRow: React.ReactNode[], na
 
     //@ts-ignore
     for (let valueKey in infoData['data']) {
+
+
+
+
+        if (valueKey === 'equipment') {
+            continue;
+        }
         const propsCeils = {
             //@ts-ignore
             title: namesData[valueKey]['name'],
@@ -58,12 +66,18 @@ function pushCeils(firstRow: React.ReactNode[], secondRow: React.ReactNode[], na
         //@ts-ignore
         for (let rowKey in infoData['data'][valueKey]) {
             //@ts-ignore
+            // console.log(valueKey)
+            //@ts-ignore
+            const level = checkLevel(rowKey, infoData['data'][valueKey][rowKey]);
+            //@ts-ignore
             propsCeils.data.push({
                 //@ts-ignore
                 label: disctionaryUnits(rowKey),
                 //@ts-ignore
-                value: infoData['data'][valueKey][rowKey].toFixed(2) as number
+                value: infoData['data'][valueKey][rowKey].toFixed(2) as number,
+                status: level?.status || ''
             })
+
 
         }
 
@@ -72,6 +86,7 @@ function pushCeils(firstRow: React.ReactNode[], secondRow: React.ReactNode[], na
         // propsCeils.data.push(newRow)
         const blockType = getBlockType(valueKey);
         if (blockType == blockTypes.SMALL_CEIL) {
+            //@ts-ignore
             secondRow.push(<CeilInfo key={Math.random()} data={propsCeils} />)
         } else if (blockType == blockTypes.BIG_CEIL) {
             secondRow.push(<CeilInfoWhite key={Math.random()} data={propsCeils} />)
