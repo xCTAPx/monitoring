@@ -30,7 +30,7 @@ export const General: React.FC<Props> = () => {
     useEffect(() => {
         async function fetchData() {
             const resp = await apiClient.get('/test')
-            setData(resp)
+            setData(resp[0])
         }
         try {
             fetchData()

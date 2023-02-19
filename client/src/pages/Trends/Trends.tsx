@@ -18,7 +18,7 @@ import { EColors } from '../../utils'
 import { Row } from './components'
 import { checkIsShown, getParamsList } from './utils'
 import namesData from '../../examples/names.json'
-import mock from '../General/mock.json'
+import values from '../../examples/values.json'
 import dayjs from 'dayjs'
 
 type Props = {}
@@ -67,10 +67,8 @@ export const Trends: React.FC<Props> = () => {
     const routeParams = useParams()
     const { id } = routeParams
 
-    // const params = useMemo(() => getParamsList(data), [data])
-
     // @ts-ignore
-    const data1 = mock[id]
+    const data1 = values[0][id]
     const params = []
     const gParams = {}
 
