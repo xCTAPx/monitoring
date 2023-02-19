@@ -5,7 +5,7 @@
             "datetime": "2023-02-18T06:27:25.439816",
             "data": {
                 "bearing1": {
-                    "temperature": 92.30000305175781,
+                    "temperature": 72.30000305175781,
                     "vibration_axial": 0.25462961196899414,
                     "vibration_horizontal": 0.20254628360271454,
                     "vibration_vertical": 0.28935185074806213
@@ -132,7 +132,7 @@
                     "oil_pressure": 22.08935809135437
                 },
                 "equipment": {
-                    "work": 0.0
+                    "work": 1.0
                 }
             }
         },
@@ -786,52 +786,52 @@
             "datetime": "2023-02-18T06:27:25.439816",
             "data": {
                 "bearing1": {
-                    "temperature": 54.49999237060547,
+                    "temperature": 64.49999237060547,
                     "vibration_axial": 0.2256944477558136,
                     "vibration_horizontal": 0.6597222089767456,
                     "vibration_vertical": 0.5439814925193787
                 },
                 "bearing2": {
-                    "temperature": 50.80000305175781,
-                    "vibration_axial": 0.8043981194496155,
-                    "vibration_horizontal": 0.5787037014961243,
-                    "vibration_vertical": 0.5150462985038757
+                    "temperature": 52.80000305175781,
+                    "vibration_axial": 1.8043981194496155,
+                    "vibration_horizontal": 2.5787037014961243,
+                    "vibration_vertical": 1.5150462985038757
                 },
                 "bearing3": {
                     "temperature": 51.600006103515625
                 },
                 "bearing4": {
-                    "temperature": 49.900001525878906
+                    "temperature": 48.900001525878906
                 },
                 "bearing5": {
-                    "temperature": 54.99999237060547
+                    "temperature": 55.99999237060547
                 },
                 "bearing6": {
-                    "temperature": 49.599998474121094
+                    "temperature": 56.599998474121094
                 },
                 "bearing7": {
                     "temperature": 41.5,
-                    "vibration_axial": 0.8796296119689941,
-                    "vibration_horizontal": 0.6018518805503845,
-                    "vibration_vertical": 0.5266203880310059
+                    "vibration_axial": 5.8796296119689941,
+                    "vibration_horizontal": 6.6018518805503845,
+                    "vibration_vertical": 1.5266203880310059
                 },
                 "bearing8": {
                     "temperature": 39.69999694824219,
-                    "vibration_axial": 0.6307870149612427,
-                    "vibration_horizontal": 0.41087961196899414,
-                    "vibration_vertical": 0.3156747817993164
+                    "vibration_axial": 1.6307870149612427,
+                    "vibration_horizontal": 1.4087961196899414,
+                    "vibration_vertical": 3.3156747817993164
                 },
                 "bearing9": {
                     "temperature": 38.099998474121094
                 },
                 "cooler": {
-                    "temperature_oil_after": 39.600006103515625,
-                    "temperature_oil_before": 41.099998474121094,
+                    "temperature_oil_after": 43.6000003515625,
+                    "temperature_oil_before": 50.0999984,
                     "temperature_water_after": -3276.800048828125,
                     "temperature_water_before": 20.300003051757812
                 },
                 "gas_manifold": {
-                    "temperature_before": 93.39004516601562,
+                    "temperature_before": 95.39004516601562,
                     "underpressure_before": 560.6192016601562
                 },
                 "valve_position": {
@@ -846,7 +846,7 @@
                     "stator_voltage": 106.0
                 },
                 "oil_system": {
-                    "oil_level": 86.5999984741211,
+                    "oil_level": 88.5999984741211,
                     "oil_pressure": 1.8869999647140503
                 },
                 "equipment": {
