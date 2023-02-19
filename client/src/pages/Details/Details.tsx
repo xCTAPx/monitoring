@@ -66,7 +66,6 @@ function pushCeils(firstRow: React.ReactNode[], secondRow: React.ReactNode[], na
         //@ts-ignore
         for (let rowKey in infoData['data'][valueKey]) {
             //@ts-ignore
-            // console.log(valueKey)
             //@ts-ignore
             const level = checkLevel(rowKey, infoData['data'][valueKey][rowKey]);
             //@ts-ignore

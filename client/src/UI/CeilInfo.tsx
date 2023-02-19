@@ -7,8 +7,8 @@ type TDatas = {
 }
 type TData = {
     label: string,
-    value: number, 
-    status:string
+    value: number,
+    status: string
 }
 type Props = { data: TDatas, status?: string }
 const Title = styled.div`
@@ -47,7 +47,7 @@ const CeilLi = styled.li<{ statusColor: string }>`
         "background-color: #EB5835;"
         :
         ""};
-    ${({ statusColor }) => statusColor == EStatuses.ERROR?
+    ${({ statusColor }) => statusColor == EStatuses.ERROR ?
         "background-color: #FAB82E;"
         :
         ""};
@@ -59,8 +59,6 @@ export const CeilInfo: React.FC<Props> = ({ data }) => {
             <Title>{data.title}</Title>
             <ParList>
                 {data.data.map(e => {
-                    console.log(e.status)
-
                     return (
                         <CeilLi statusColor={e.status || ''}><span>{e.label}</span><span>{e.value}</span></CeilLi>
                     )
