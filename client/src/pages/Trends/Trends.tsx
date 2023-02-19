@@ -94,7 +94,7 @@ const data = [
         equipment_work: Math.random() * 1000,
     },
     {
-        name: '1',
+        name: '2',
         bearing1_temperature: Math.random() * 1000,
         bearing1_vibration_axial: Math.random() * 1000,
         bearing1_vibration_horizontal: Math.random() * 1000,
@@ -129,7 +129,7 @@ const data = [
         equipment_work: Math.random() * 1000,
     },
     {
-        name: '1',
+        name: '3',
         bearing1_temperature: Math.random() * 1000,
         bearing1_vibration_axial: Math.random() * 1000,
         bearing1_vibration_horizontal: Math.random() * 1000,
@@ -164,7 +164,7 @@ const data = [
         equipment_work: Math.random() * 1000,
     },
     {
-        name: '1',
+        name: '4',
         bearing1_temperature: Math.random() * 1000,
         bearing1_vibration_axial: Math.random() * 1000,
         bearing1_vibration_horizontal: Math.random() * 1000,
