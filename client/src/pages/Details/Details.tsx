@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import styled from 'styled-components'
 import { MainLayout } from '../../layouts'
@@ -9,8 +9,8 @@ import { RangePanel } from '../../UI/RangePanel'
 import { disctionaryUnits } from '../../helpers/disctionaryUnits'
 import { getBlockType, blockTypes } from '../../helpers/getBlockType'
 import namesData from '../../examples/names.json'
-import mock from '../General/mock.json'
 import { checkLevel } from '../../utils/checkLevel'
+import { apiClient } from '../../apiClient'
 
 type Props = {}
 
@@ -21,17 +21,34 @@ const Grid = styled.div`
 
 
 export const Details: React.FC<Props> = () => {
+    const [data, setData] = useState()
     const navigate = useNavigate()
     const params = useParams()
     const { id } = params;
     let firstRow: React.ReactNode[] = [];
     let secondRow: React.ReactNode[] = [];
     //@ts-ignore
-    pushCeils(firstRow, secondRow, namesData[id], mock[id])
+    if (data) pushCeils(firstRow, secondRow, namesData[id], data[id])
     const openTrends = (id: string) => navigate(`/trends/${id}`)
 
+    useEffect(() => {
+        async function fetchData() {
+            const resp = await apiClient.get('/test')
+            setData(resp)
+        }
+        try {
+            fetchData()
+        } catch (e) {
+            console.error(e)
+        }
+
+        const intervalID = setInterval(fetchData, 5000)
+
+        return () => clearInterval(intervalID)
+    }, [])
+
     //@ts-ignore
-    return <MainLayout title="Прогнозная аналитика эксгаустеров" screenTitle={namesData[id].name} slot={
+    return data ? (<MainLayout title="Прогнозная аналитика эксгаустеров" screenTitle={namesData[id].name} slot={
         <Switch
             activeScreen={EScreens.SCHEMA}
             onSecondClick={() => openTrends(id?.toString() ?? '')}
@@ -44,7 +61,7 @@ export const Details: React.FC<Props> = () => {
         <Grid>
             {secondRow}
         </Grid>
-    </MainLayout>
+    </MainLayout>) : <p>Loading...</p>
 }
 
 function pushCeils(firstRow: React.ReactNode[], secondRow: React.ReactNode[], namesData: object, infoData: object) {
@@ -74,6 +91,7 @@ function pushCeils(firstRow: React.ReactNode[], secondRow: React.ReactNode[], na
                 label: disctionaryUnits(rowKey),
                 //@ts-ignore
                 value: infoData['data'][valueKey][rowKey].toFixed(2) as number,
+                //@ts-ignore
                 status: level?.status || ''
             })
 

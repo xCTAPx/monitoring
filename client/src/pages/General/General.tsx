@@ -1,13 +1,13 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 import { MainLayout } from '../../layouts'
 import { EStatuses } from '../../types'
 import { Pannel } from '../../UI'
 import { Exhauster, Aglomachine } from './components'
-import mock from './mock.json'
 import { mapData } from './mapper'
 import names from '../../examples/names.json'
+import { apiClient } from '../../apiClient'
 
 type Props = {}
 type OpenDetailsParams = {
@@ -20,13 +20,30 @@ const Content = styled.section`
 `
 
 export const General: React.FC<Props> = () => {
-    const params = mapData(mock, names)
+    const [data, setData] = useState()
+    const params = mapData(data, names)
     const navigate = useNavigate()
 
     const openDetails = (id: string, params?: OpenDetailsParams) =>
         navigate(`/details/${id}`, { state: params })
 
-    return (
+    useEffect(() => {
+        async function fetchData() {
+            const resp = await apiClient.get('/test')
+            setData(resp)
+        }
+        try {
+            fetchData()
+        } catch (e) {
+            console.error(e)
+        }
+
+        const intervalID = setInterval(fetchData, 5000)
+
+        return () => clearInterval(intervalID)
+    }, [])
+
+    return (data ?
         <MainLayout
             title="Прогнозная аналитика эксгаустеров"
             screenTitle="Главный экран"
@@ -82,6 +99,6 @@ export const General: React.FC<Props> = () => {
                     />
                 </Aglomachine>
             </Content>
-        </MainLayout>
+        </MainLayout> : <p>Loading...</p>
     )
 }
