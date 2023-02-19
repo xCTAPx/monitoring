@@ -107,26 +107,31 @@ export const Trends: React.FC<Props> = () => {
     )
 
     const [paramsList, setParamsList] = useState<IParam[]>(initialParamsList)
+    const [blockAddPL, setBlockAddPL] = useState<boolean>(false)
 
     useEffect(() => {
-        if (JSON.stringify(initialParamsList) !== JSON.stringify(paramsList))
-            setParamsList(initialParamsList)
-    }, [initialParamsList])
+        if (blockAddPL) return
+        if (initialParamsList.length) setBlockAddPL(true)
+        setParamsList(initialParamsList)
+    }, [initialParamsList, blockAddPL])
 
     const checkIfParamShown = useCallback(
         (parametrName: string) => {
             return checkIsShown(paramsList, parametrName)
         },
-        [paramsList, gParams]
+        [paramsList]
     )
 
     const onChangeValue = useCallback((name: string, value: boolean) => {
-        setParamsList((prevParams) =>
-            prevParams.map((param) =>
+        setParamsList((prevParams) => {
+            const n = prevParams.map((param) =>
                 param.name === name
                     ? { ...param, isShown: value }
                     : { ...param }
             )
+
+            return n
+        }
         )
     }, [])
 
