@@ -8,8 +8,8 @@ import { CeilInfoWhite } from '../../UI/CeilInfoWhite'
 import { RangePanel } from '../../UI/RangePanel'
 import { disctionaryUnits } from '../../helpers/disctionaryUnits'
 import { getBlockType, blockTypes } from '../../helpers/getBlockType'
-import mock from '../General/mock.json'
 import namesData from '../../examples/names.json'
+import mock from '../General/mock.json'
 
 type Props = {}
 

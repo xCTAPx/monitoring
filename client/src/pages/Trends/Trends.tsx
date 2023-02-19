@@ -17,9 +17,10 @@ import { Switch, EScreens } from '../../UI'
 import { EColors } from '../../utils'
 import { Row } from './components'
 import { checkIsShown, getParamsList } from './utils'
+import namesData from '../../examples/names.json'
+import mock from '../General/mock.json'
 
-type Props = {
-}
+type Props = {}
 
 export type IParam = {
     name: string
@@ -103,6 +104,7 @@ const data = [
 export const Trends: React.FC<Props> = () => {
     const navigate = useNavigate()
 
+
     const openDetails = (id: string) => navigate(`/details/${id}`)
 
     const routeParams = useParams()
@@ -113,6 +115,12 @@ export const Trends: React.FC<Props> = () => {
         () => params.map((param) => ({ name: param, isShown: true })),
         [params]
     )
+
+    // @ts-ignore
+    const data1 = mock[id]
+
+    console.log(data1.data)
+
 
     const [paramsList, setParamsList] = useState<IParam[]>(initialParamsList)
 
@@ -136,7 +144,8 @@ export const Trends: React.FC<Props> = () => {
     return (
         <MainLayout
             title="Прогнозная аналитика эксгаустеров"
-            screenTitle={`Эксгаустер №${id}`}
+            // @ts-ignore
+            screenTitle={namesData[id].name}
             slot={
                 <Switch
                     activeScreen={EScreens.TRENDS}
